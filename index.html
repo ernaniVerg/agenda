@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Caixa de Texto, Pendente de Opções e Mini Calendário</title>
+    <style>
+        /* Estilos CSS para formatar o formulário */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+        #datepicker {
+            width: 100%;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário com Caixa de Texto, Pendente de Opções e Mini Calendário</h1>
+    <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+        <label for="cidade">Cidade:</label>
+        <select id="cidade" name="cidade">
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="bh">Belo Horizonte</option>
+            <option value="poa">Porto Alegre</option>
+        </select>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" min="2023-01-01" max="2023-12-31">
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Script para exibir a data selecionada no console ao alterar o mini calendário
+        document.getElementById('data').addEventListener('change', function() {
+            console.log('Data selecionada: ' + this.value);
+        });
+    </script>
+</body>
+</html>
