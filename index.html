@@ -1,51 +1,629 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário com Caixa de Texto, Pendente de Opções e Mini Calendário</title>
+    <title>Formulário de Eventos AD Bras Bauru - 2024</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
     <style>
-        /* Estilos CSS para formatar o formulário */
+        
+        body {
+            /*font-family: Arial, sans-serif;*/
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #042d47, #ecdddb);
+            color: #212121;
+        }
+      
+        h1 {
+            color: #ffffff; 
+            text-align: center; /* Centralize o texto horizontalmente */
+        }
+        h2 {
+            color: #170045; /* Azul Marinho */
+            text-align: center; /* Centralize o texto horizontalmente */
+        }
+
+       .quadro {
+            border: 2px solid #23055f; /* Espessura e cor da borda */
+            padding: 20px; /* Espaçamento interno para criar margem em torno do conteúdo */
+            margin: 20px; /* Espaçamento externo para separar o quadro de outros elementos */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 20px rgba(108, 108, 108, 0.1);
+        }
+        .botao-diferenciado {
+            background-color: #3498db; /* Cor de fundo */
+            color: #fff; /* Cor do texto */
+            border: none; /* Remove a borda */
+            border-radius: 20px; /* Borda arredondada */
+            padding: 15px 20px; /* Espaçamento interno (altura x largura) */
+            font-size: 20px; /* Tamanho da fonte */
+            cursor: pointer; /* Mude o cursor ao passar o mouse */
+            text-align: center; /* Centralize o texto horizontalmente */
+            display: block; /* Torna o botão um bloco para centralizá-lo verticalmente */
+            margin: 0 auto; /* Centralize o botão verticalmente */
+        }
+        .botao-diferenciado:hover {
+            background-color: #2980b9; /* Cor de fundo quando passar o mouse */
+        }
+
+        .botao-block {
+            background-color: #b0b0b0; /* Cor de fundo */
+            color: #fff; /* Cor do texto */
+            border: none; /* Remove a borda */
+            border-radius: 20px; /* Borda arredondada */
+            padding: 15px 20px; /* Espaçamento interno (altura x largura) */
+            font-size: 20px; /* Tamanho da fonte */
+            cursor: pointer; /* Mude o cursor ao passar o mouse */
+            text-align: center; /* Centralize o texto horizontalmente */
+            display: block; /* Torna o botão um bloco para centralizá-lo verticalmente */
+            margin: 0 auto; /* Centralize o botão verticalmente */
+            pointer-events: none;
+        }
+
         label {
-            display: block;
-            margin-bottom: 10px;
+            display: block; /* Coloca cada rótulo em uma nova linha */
+            margin-bottom: 10px; /* Espaçamento entre rótulos */
+            font-weight: bold; /* Estilo de fonte em negrito para rótulos */
+            font-size: 16px; /* Tamanho da fonte */
+            padding: 5px; /* Espaçamento interno */
         }
-        input[type="text"], select {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
+
+        input[type="text"],
+        input[type="email"] 
+        {
+            width: 80%; /* Largura total do container pai */
+            padding: 10px; /* Espaçamento interno */
+            margin-bottom: 20px; /* Espaçamento entre campos */
+            border: 1px solid #ccc; /* Borda com cor */
+            border-radius: 5px; /* Borda arredondada */
+            font-size: 16px; /* Tamanho da fonte */
         }
-        #datepicker {
-            width: 100%;
-            padding: 5px;
+
+        input[type="date"]
+        {
+            width: 30%; /* Largura total do container pai */
+            padding: 10px; /* Espaçamento interno */
+            margin-bottom: 20px; /* Espaçamento entre campos */
+            border: 1px solid #ccc; /* Borda com cor */
+            border-radius: 5px; /* Borda arredondada */
+            font-size: 16px; /* Tamanho da fonte */
         }
+
+        input[type="checkbox"]{        
+            width: 20px;
+            height: 20px
+        }
+
+        select {
+            /*appearance: none;  Remove o estilo padrão do sistema */
+            padding: 10px; /* Espaçamento interno */
+            border: 1px solid #ccc; /* Borda com cor */
+            border-radius: 5px; /* Borda arredondada */
+            background-color: #fff; /* Cor de fundo */
+            font-size: 16px; /* Tamanho da fonte */
+            width: 50%; /* Largura do select */
+            cursor: pointer; /* Cursor de seta */
+        }
+
+        select option {
+            background-color: #fff; /* Cor de fundo das opções */
+            color: #333; /* Cor do texto das opções */
+        }
+
+        select:focus {
+            border-color: #007bff; /* Cor da borda quando o select está focado */
+        }
+
+        .bloqueado {
+            border: 2px solid #23055f; /* Espessura e cor da borda */
+            padding: 20px; /* Espaçamento interno para criar margem em torno do conteúdo */
+            margin: 20px; /* Espaçamento externo para separar o quadro de outros elementos */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 20px rgba(108, 108, 108, 0.1);
+            pointer-events: none;
+            display:none;
+            /*visibility: hidden;*/
+        }
+        .bloque {
+            pointer-events: none;
+            display:none;
+        }
+
     </style>
+
 </head>
 <body>
-    <h1>Formulário com Caixa de Texto, Pendente de Opções e Mini Calendário</h1>
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+    <h1>Formulário de Eventos 2024</h1>
 
-        <label for="cidade">Cidade:</label>
-        <select id="cidade" name="cidade">
-            <option value="sp">São Paulo</option>
-            <option value="rj">Rio de Janeiro</option>
-            <option value="bh">Belo Horizonte</option>
-            <option value="poa">Porto Alegre</option>
-        </select>
+    <div id="Data" class="quadro">
+        <h2>Calendário do Campo</h2>
+        <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FSao_Paulo&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=1&src=ZXZlbnRvc2FkYmJAZ21haWwuY29t&src=cHQtcHQuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5&color=%23E67C73" style="border:solid 1px #777" width="800" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>  
+        
+    <form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec" method="post">   
+    
+        <div id="Data" class="quadro">
+            <h2>Data do Evento</h2>
+            <label for="data-inicial">Data Inicial:</label>
+            <input type="date" id="data-inicial" name="data inicial" required>
 
-        <label for="data">Data:</label>
-        <input type="date" id="data" name="data" min="2023-01-01" max="2023-12-31">
+            <label for="data-final">Data Final:</label>
+            <input type="date" id="data-final" name="data final" required>
+            <br>
+            <p id="info"></p>
+            <br>
+            <button id="btn" class="botao-diferenciado">Verificar disponibilidade</button> 
+        </div>
 
-        <button type="submit">Enviar</button>
-    </form>
+        <div id="Info_Geral" class="bloqueado">
+            <h2>Dados do Evento</h2>
+            <label for="igreja">Congregação:</label>
+            <select id="igreja" name="Congregacao">
+                <option value=""></option>
+                <option value="Agudos Canaa">Agudos Canaa</option>
+                <option value= "Agudos Pampulha">Agudos Pampulha</option>
+                <option value="Agudos Canaa">Agudos Canaa</option>
+                <option value="Agudos Simões">Agudos Simões</option>
+                <option value="Altos da Cidade">Altos da Cidade</option>
+                <option value="Arealva">Arealva</option>
+                <option value="Areiópolis">Areiópolis</option>
+                <option value="Avaí">Avaí</option>
+                <option value="Avanhandava">Avanhandava</option>
+                <option value="Balbinos">Balbinos</option>
+                <option value="Barra Bonita">Barra Bonita</option>
+                <option value="Bauru I">Bauru I</option>
+                <option value="Boracéia">Boracéia</option>
+                <option value="Cafelandia">Cafelandia</option>
+                <option value="Domelia">Domelia</option>
+                <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
+                <option value="Ferradura Mirim">Ferradura Mirim</option>
+                <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
+                <option value="Gasparini">Gasparini</option>
+                <option value="Iacanga">Iacanga</option>
+                <option value="Iaras">Iaras</option>
+                <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
+                <option value="Itapuí">Itapuí</option>
+                <option value="Jaraguá">Jaraguá</option>
+                <option value="Jardim Andorfato">Jardim Andorfato</option>
+                <option value="Jardim Bela Vista">Jardim Bela Vista</option>
+                <option value="Jardim Carolina">Jardim Carolina</option>
+                <option value="Jardim Chapadão">Jardim Chapadão</option>
+                <option value="Jardim Europa">Jardim Europa</option>
+                <option value="Jardim Flórida">Jardim Flórida</option>
+                <option value="Jardim Nicéia">Jardim Nicéia</option>
+                <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
+                <option value="Jardim Redentor">Jardim Redentor</option>
+                <option value="Jardim TV">Jardim TV</option>
+                <option value="Macatuba Casa de Paz">Macatuba Casa de Paz</option>
+                <option value="Macatuba Centro">Macatuba Centro</option>
+                <option value="Nova Mineiros">Nova Mineiros</option>
+                <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
+                <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
+                <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
+                <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
+                <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
+                <option value="Parque Real">Parque Real</option>
+                <option value="Parque Roosevelt">Parque Roosevelt</option>
+                <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
+                <option value="Parque Viaduto">Parque Viaduto</option>
+                <option value="Pederneiras - VP">Pederneiras - VP</option>
+                <option value="Pederneiras CN">Pederneiras CN</option>
+                <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
+                <option value="Piratininga">Piratininga</option>
+                <option value="Potunduva - Jaú">Potunduva - Jaú</option>
+                <option value="Pousada I">Pousada I</option>
+                <option value="Pousada II">Pousada II</option>
+                <option value="Presidente Alves">Presidente Alves</option>
+                <option value="Promissão">Promissão</option>
+                <option value="Reginopólis">Reginopólis</option>
+                <option value="Restituição em Cristo">Restituição em Cristo</option>
+                <option value="Santa  Cecília">Santa Cecília</option>
+                <option value="Santa Candida">Santa Candida</option>
+                <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
+                <option value="Santa Luzia">Santa Luzia</option>
+                <option value="Santa Terezinha">Santa Terezinha</option>
+                <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
+                <option value="São Manoel">São Manoel</option>
+                <option value="Sarutaiá">Sarutaiá</option>
+                <option value="Sede Catedral">Sede Catedral</option>
+                <option value="Tangarás">Tangarás</option>
+                <option value="Vila Dutra">Vila Dutra</option>
+                <option value="Vila Indepedendência">Vila Independência</option>
+                <option value="Vila Industrial">Vila Industrial</option>
+                <option value="Vila São Paulo">Vila São Paulo</option>
+            </select>
+                <br>
+                <br>
+
+                <label for="evento">Evento :</label>
+                <input type="text" name="Nome do evento" id="evento" required>
+                <br>
+
+                <label for="resp">Responsavel pelo preenchimento :</label>
+                <input type="text" name="responsavel pelo preenchimento" id="evento" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <br>
+                <br>
+
+                <label>
+                    <input type="checkbox" id="checkbox1">
+                    Possuí Preletor Definido: 
+                </label>
+                <br>
+
+            </div>
+            
+            <div id="1_dia" class="bloqueado">
+                <h2>1° dia</h2>
+
+                <label for="Cpre1">Cargo Ministerial do Preletor:</label>
+                    <select id="Cpre1" name="Cargo_do_preletor_1">
+                        <option value=""></option>
+                        <option value="Pr">Pastor(a)</option>
+                        <option value="Ev">Evangelista</option>
+                        <option value="Miss">Missionário(a)</option>
+                        <option value="Miss">Presbitero</option>
+                        <option value="Diac.">Diácono(isa)</option>
+                        <option value="Aux">Auxiliar/Coperador(a)</option>
+                    </select>
+                <br>
+                <br>
+
+                <label for="pre1">Nome Preletor:</label>
+                <input type="text" id="pre-in1" name="Nome_do_preletor_1">
+                <br>
+
+                <label for="ig-in1">Igreja/Ministerio: </label>
+                <select id="ig-in1" name="Igreja_preletor_1">
+                    <option value=""></option>
+                    <option value="Madureira">AD Ministério de Madureira</option>
+                    <option value= "Belem">AD Ministério do Belem</option>
+                    <option value="Ipiranga">AD Ministério do Ipiranga</option>
+                    <option value="Outro">Outra</option>
+                </select>
+                <br>
+                <br>
+
+                <div id="div_Ig_out_1" class="bloque">
+                    <label for="Ig_outra_1">Outra Denominação:</label>
+                    <input type="text" id="Ig_outra_1" name="Igreja_out_preletor_1">
+                    <br>
+                </div>
+                
+                <label for="Ig_outra_1">(bairro) Cidade / Estado :</label>
+                <input type="text" id="Ig_outra_1" name="Cidade_do_preletor_1">
+                <br>
+                <br>
+    
+                <label>
+                    <input type="checkbox" id="checkbox2">
+                    Louvor/Cantor/Banda convidado:
+                </label>
+                <br>
+
+                <div id="cant_ig_1" class="bloque">
+                    <label for="cant1">Louvor/Cantor:</label>
+                    <input type="text" id="cant-in1" name="Nome Cantor 1">
+                    <label for="igc1">Igreja - Cidade/Estado:</label>
+                    <input type="text" id="igc-in1" name="Igreja Cantor 1">
+                </div>
+            </div>
+
+            <div id="2_dia" class="bloqueado">
+                <h2>2° dia</h2>
+
+                <label for="Cpre2">Cargo Ministerial do Preletor:</label>
+                    <select id="Cpre2" name="Cargo_do_preletor_2">
+                        <option value=""></option>
+                        <option value="Pr">Pastor(a)</option>
+                        <option value="Ev">Evangelista</option>
+                        <option value="Miss">Missionário(a)</option>
+                        <option value="Miss">Presbitero</option>
+                        <option value="Diac.">Diácono(isa)</option>
+                        <option value="Aux">Auxiliar/Coperador(a)</option>
+                    </select>
+                <br>
+                <br>
+
+                <label for="pre2">Nome Preletor:</label>
+                <input type="text" id="pre-in2" name="Nome_do_preletor_2">
+                <br>
+
+                <label for="ig-in2">Igreja/Ministerio: </label>
+                <select id="ig-in2" name="Igreja_preletor_2">
+                    <option value=""></option>
+                    <option value="Madureira">AD Ministério de Madureira</option>
+                    <option value= "Belem">AD Ministério do Belem</option>
+                    <option value="Ipiranga">AD Ministério do Ipiranga</option>
+                    <option value="Outro">Outra</option>
+                </select>
+                <br>
+                <br>
+
+                <div id="div_Ig_out_2" class="bloque">
+                    <label for="Ig_outra_2">Outra Denominação:</label>
+                    <input type="text" id="Ig_outra_2" name="Igreja_out_preletor_2">
+                    <br>
+                </div>
+                
+                <label for="Ig_outra_2">(bairro) Cidade / Estado :</label>
+                <input type="text" id="Ig_outra_2" name="Cidade_do_preletor_2">
+                <br>
+                <br>
+    
+                <label>
+                    <input type="checkbox" id="checkbox22">
+                    Louvor/Cantor/Banda convidado:
+                </label>
+                <br>
+
+                <div id="cant_ig_2" class="bloque">
+                    <label for="cant2">Louvor/Cantor:</label>
+                    <input type="text" id="cant-in2" name="Nome_Cantor_2">
+                    <label for="igc2">Igreja - Cidade/Estado:</label>
+                    <input type="text" id="igc-in2" name="Igreja_Cantor_2">
+                </div>
+            </div>
+
+            <div id="3_dia" class="bloqueado">
+                <h2>3° dia</h2>
+
+                <label for="Cpre3">Cargo Ministerial do Preletor:</label>
+                    <select id="Cpre3" name="Cargo_do_preletor_3">
+                        <option value=""></option>
+                        <option value="Pr">Pastor(a)</option>
+                        <option value="Ev">Evangelista</option>
+                        <option value="Miss">Missionário(a)</option>
+                        <option value="Miss">Presbitero</option>
+                        <option value="Diac.">Diácono(isa)</option>
+                        <option value="Aux">Auxiliar/Coperador(a)</option>
+                    </select>
+                <br>
+                <br>
+
+                <label for="pre3">Nome Preletor:</label>
+                <input type="text" id="pre-in3" name="Nome_do_preletor_3">
+                <br>
+
+                <label for="ig-in3">Igreja/Ministerio: </label>
+                <select id="ig-in3" name="Igreja_preletor_3">
+                    <option value=""></option>
+                    <option value="Madureira">AD Ministério de Madureira</option>
+                    <option value= "Belem">AD Ministério do Belem</option>
+                    <option value="Ipiranga">AD Ministério do Ipiranga</option>
+                    <option value="Outro">Outra</option>
+                </select>
+                <br>
+                <br>
+
+                <div id="div_Ig_out_3" class="bloque">
+                    <label for="Ig_outra_3">Outra Denominação:</label>
+                    <input type="text" id="Ig_outra_3" name="Igreja_out_preletor_3">
+                    <br>
+                </div>
+                
+                <label for="Ig_outra_3">(bairro) Cidade / Estado :</label>
+                <input type="text" id="Ig_outra_3" name="Cidade_do_preletor_3">
+                <br>
+                <br>
+    
+                <label>
+                    <input type="checkbox" id="checkbox32">
+                    Louvor/Cantor/Banda convidado:
+                </label>
+                <br>
+
+                <div id="cant_ig_3" class="bloque">
+                    <label for="cant3">Louvor/Cantor:</label>
+                    <input type="text" id="cant-in3" name="Nome_Cantor_3">
+                    <label for="igc3">Igreja - Cidade/Estado:</label>
+                    <input type="text" id="igc-in3" name="Igreja_Cantor_3">
+                </div>
+            </div>
+
+        <br>
+        <button id="btn2" class="botao-block" type="submit">Enviar Formulário</button> 
+    </form>       
+             
+</body>
 
     <script>
-        // Script para exibir a data selecionada no console ao alterar o mini calendário
-        document.getElementById('data').addEventListener('change', function() {
-            console.log('Data selecionada: ' + this.value);
+
+        const dataInicialInput = document.getElementById('data-inicial');
+        const dataFinalInput = document.getElementById('data-final');
+
+        const btn = document.getElementById('btn');
+        const btn2 = document.getElementById('btn2');
+
+        const infoPara = document.getElementById('info');
+
+        const meuDiv = document.getElementById('Info_Geral');
+        const div1d = document.getElementById('1_dia');
+        const div2d = document.getElementById('2_dia');
+        const div3d = document.getElementById('3_dia');
+
+        const dataInicialMinima = new Date();
+        dataInicialMinima.setDate(dataInicialMinima.getDate() + 30);
+        const minDate = dataInicialMinima.toISOString().split('T')[0];
+        dataInicialInput.min = minDate;
+
+
+        dataInicialInput.addEventListener('input', () => {
+
+            const dataInicial = new Date(dataInicialInput.value);
+            // Ajusta a data mínima permitida na entrada de data final
+            dataFinalInput.min = dataInicialInput.value;
+            const dataMaxima = new Date(dataInicial);
+            dataMaxima.setDate(dataMaxima.getDate() + 2); // Adicionar 2 dias
+
+            // Converter a data máxima para o formato YYYY-MM-DD
+            const maxDate = dataMaxima.toISOString().split('T')[0];
+            dataFinalInput.max = maxDate; 
+
+            meuDiv.classList.add('bloqueado');
+            div1d.classList.add('bloqueado');
+            div2d.classList.add('bloqueado');
+            div3d.classList.add('bloqueado');
         });
+
+        dataFinalInput.addEventListener('input', () => {
+
+            meuDiv.classList.add('bloqueado');
+            div1d.classList.add('bloqueado');
+            div2d.classList.add('bloqueado');
+            div3d.classList.add('bloqueado');
+
+        });
+
+        // Verificação da disponibilidade da data
+        btn.addEventListener('click', function() {
+
+            infoPara.textContent = "Aguarde...";
+            const dataInOb = new Date(dataInicialInput.value)
+            const dataFimOb = new Date(dataFinalInput.value)
+
+            const dataInISO = dataInOb.toISOString().split('T')[0];
+            const dataFimISO = dataFimOb.toISOString().split('T')[0];
+
+            const dataInArray = dataInISO.split('-');
+            const dataFimArray = dataFimISO.split('-');
+
+            const dataIn = `${dataInArray[0]}-${dataInArray[1]}-${dataInArray[2]}`;
+            const dataFim = `${dataFimArray[0]}-${dataFimArray[1]}-${dataFimArray[2]}`;
+
+            const url = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?datain=${dataInOb}&dataout=${dataFimOb}`
+            
+            console.log(dataIn)
+            console.log(dataFim)
+
+            fetch(url)
+                .then(response => response.json()) // Converte a resposta em JSON
+                .then(msn => {
+                    console.log(msn);
+                    const informacao = msn;
+                    infoPara.textContent = informacao.split(':')[1];
+                    if(informacao.split(':')[0] == '0'){
+                        meuDiv.classList.remove('bloqueado');
+                        meuDiv.classList.add('quadro');
+                        btn2.classList.remove('botao-block');
+                        btn2.classList.add('botao-diferenciado');
+                    }else{ 
+                        meuDiv.classList.add('bloqueado');
+                        btn2.classList.add('botao-block');
+                    }
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
+                });
+        });
+
+        //Script para o chekbox de quadro preletor e cantor
+        const checkbox1 = document.getElementById('checkbox1');
+
+        checkbox1.addEventListener('change', () => {
+
+            const dataInicio = new Date(dataInicialInput.value);
+            const dataFim = new Date(dataFinalInput.value);
+
+            var diferencaEmMilissegundos = dataFim - dataInicio;
+            var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
+
+            if (checkbox1.checked) {
+                div1d.classList.remove('bloqueado');
+                div1d.classList.add('quadro');
+                
+                if (dif === 1){
+                    div2d.classList.remove('bloqueado');
+                    div2d.classList.add('quadro');
+                }
+                if (dif === 2){
+                    div2d.classList.remove('bloqueado');
+                    div2d.classList.add('quadro');
+                    div3d.classList.remove('bloqueado');
+                    div3d.classList.add('quadro');
+                }
+            } else {
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+            }
+        });
+
+        //Script para outro ministerio e cantor 1_Dia
+        const checkbox2 = document.getElementById('checkbox2');
+        const cant_ig_1 = document.getElementById('cant_ig_1');
+
+        const Ig_1d = document.getElementById('ig-in1');
+        const Outra_Ig_1d = document.getElementById("div_Ig_out_1");
+
+        checkbox2.addEventListener('change', () => {
+            if (checkbox2.checked) {
+                cant_ig_1.classList.remove("bloque")
+            } else {
+                cant_ig_1.classList.add("bloque")
+            }
+        });
+        Ig_1d.addEventListener("change", () => {
+            const Ig = Ig_1d.value
+            if(Ig === "Outro"){
+                Outra_Ig_1d.classList.remove("bloque");
+            }else{
+                Outra_Ig_1d.classList.add("bloque");
+            }
+         });
+
+        //Script para outro ministerio e cantor 2_Dia
+        const checkbox22 = document.getElementById('checkbox22');
+        const cant_ig_2 = document.getElementById('cant_ig_2');
+
+        const Ig_2d = document.getElementById('ig-in2');
+        const Outra_Ig_2d = document.getElementById("div_Ig_out_2");
+
+        checkbox22.addEventListener('change', () => {
+            if (checkbox22.checked) {
+                cant_ig_2.classList.remove("bloque")
+            } else {
+                cant_ig_2.classList.add("bloque")
+            }
+        });
+        Ig_1d.addEventListener("change", () => {
+            const Ig = Ig_2d.value
+            if(Ig === "Outro"){
+                Outra_Ig_2d.classList.remove("bloque");
+            }else{
+                Outra_Ig_2d.classList.add("bloque");
+            }
+         });
+
+        //Script para outro ministerio e cantor 3_Dia
+        const checkbox32 = document.getElementById('checkbox32');
+        const cant_ig_3 = document.getElementById('cant_ig_3');
+
+        const Ig_3d = document.getElementById('ig-in3');
+        const Outra_Ig_3d = document.getElementById("div_Ig_out_3");
+
+        checkbox32.addEventListener('change', () => {
+            if (checkbox32.checked) {
+                cant_ig_3.classList.remove("bloque")
+            } else {
+                cant_ig_3.classList.add("bloque")
+            }
+        });
+        Ig_3d.addEventListener("change", () => {
+            const Ig = Ig_3d.value
+            if(Ig === "Outro"){
+                Outra_Ig_3d.classList.remove("bloque");
+            }else{
+                Outra_Ig_3d.classList.add("bloque");
+            }
+         });
+
     </script>
-</body>
 </html>
