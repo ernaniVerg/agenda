@@ -137,17 +137,115 @@
             display:none;
         }
 
+
     </style>
 
 </head>
 <body>
     <h1>Formulário de Eventos 2024</h1>
 
-    <div id="Data" class="quadro">
+    <div id="data" class="quadro">
         <h2>Calendário do Campo</h2>
         <iframe src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FSao_Paulo&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=1&src=ZXZlbnRvc2FkYmJAZ21haWwuY29t&src=cHQtcHQuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%233F51B5&color=%23E67C73" style="border:solid 1px #777" width="800" height="400" frameborder="0" scrolling="no"></iframe>
-    </div>  
-        
+        <br>
+    </div>
+
+    <div class="quadro">
+        <label>
+            <input type="checkbox" id="preag">
+            Evento já pré-agendado.
+        </label>
+    </div>
+
+    <div id="dataAg" class="bloqueado">
+        <h2>Dados do Pré-Agendamento</h2>
+        <label for="data-inicialAg">Data Inicial:</label>
+        <input type="date" id="data-inicialAg" name="data_inicialAg" required>
+
+        <label for="igrejaAg">Congregação:</label>
+        <select id="igrejaAg" name="CongregacaoAg">
+            <option value=""></option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value= "Agudos Pampulha">Agudos Pampulha</option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value="Agudos Simões">Agudos Simões</option>
+            <option value="Altos da Cidade">Altos da Cidade</option>
+            <option value="Arealva">Arealva</option>
+            <option value="Areiópolis">Areiópolis</option>
+            <option value="Avaí">Avaí</option>
+            <option value="Avanhandava">Avanhandava</option>
+            <option value="Balbinos">Balbinos</option>
+            <option value="Barra Bonita">Barra Bonita</option>
+            <option value="Bauru I">Bauru I</option>
+            <option value="Boracéia">Boracéia</option>
+            <option value="Cafelandia">Cafelandia</option>
+            <option value="Domelia">Domelia</option>
+            <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
+            <option value="Ferradura Mirim">Ferradura Mirim</option>
+            <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
+            <option value="Gasparini">Gasparini</option>
+            <option value="Iacanga">Iacanga</option>
+            <option value="Iaras">Iaras</option>
+            <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
+            <option value="Itapuí">Itapuí</option>
+            <option value="Jaraguá">Jaraguá</option>
+            <option value="Jardim Andorfato">Jardim Andorfato</option>
+            <option value="Jardim Bela Vista">Jardim Bela Vista</option>
+            <option value="Jardim Carolina">Jardim Carolina</option>
+            <option value="Jardim Chapadão">Jardim Chapadão</option>
+            <option value="Jardim Europa">Jardim Europa</option>
+            <option value="Jardim Flórida">Jardim Flórida</option>
+            <option value="Jardim Nicéia">Jardim Nicéia</option>
+            <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
+            <option value="Jardim Redentor">Jardim Redentor</option>
+            <option value="Jardim TV">Jardim TV</option>
+            <option value="Macatuba Casa de Paz">Macatuba Casa de Paz</option>
+            <option value="Macatuba Centro">Macatuba Centro</option>
+            <option value="Nova Mineiros">Nova Mineiros</option>
+            <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
+            <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
+            <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
+            <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
+            <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
+            <option value="Parque Real">Parque Real</option>
+            <option value="Parque Roosevelt">Parque Roosevelt</option>
+            <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
+            <option value="Parque Viaduto">Parque Viaduto</option>
+            <option value="Pederneiras - VP">Pederneiras - VP</option>
+            <option value="Pederneiras CN">Pederneiras CN</option>
+            <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
+            <option value="Piratininga">Piratininga</option>
+            <option value="Potunduva - Jaú">Potunduva - Jaú</option>
+            <option value="Pousada I">Pousada I</option>
+            <option value="Pousada II">Pousada II</option>
+            <option value="Presidente Alves">Presidente Alves</option>
+            <option value="Promissão">Promissão</option>
+            <option value="Reginopólis">Reginopólis</option>
+            <option value="Restituição em Cristo">Restituição em Cristo</option>
+            <option value="Santa  Cecília">Santa Cecília</option>
+            <option value="Santa Candida">Santa Candida</option>
+            <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
+            <option value="Santa Luzia">Santa Luzia</option>
+            <option value="Santa Terezinha">Santa Terezinha</option>
+            <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
+            <option value="São Manoel">São Manoel</option>
+            <option value="Sarutaiá">Sarutaiá</option>
+            <option value="Sede Catedral">Sede Catedral</option>
+            <option value="Tangarás">Tangarás</option>
+            <option value="Vila Dutra">Vila Dutra</option>
+            <option value="Vila Indepedendência">Vila Independência</option>
+            <option value="Vila Industrial">Vila Industrial</option>
+            <option value="Vila São Paulo">Vila São Paulo</option>
+        </select>
+            <br>
+            <br>
+            <p id="infoAg"></p>
+            <br>
+            <button id="btnAg" class="botao-diferenciado">Localizar na Agenda</button> 
+            <br>
+
+    </div>
+
     <form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec" method="post">   
     
         <div id="Data" class="quadro">
@@ -161,6 +259,8 @@
             <p id="info"></p>
             <br>
             <button id="btn" class="botao-diferenciado">Verificar disponibilidade</button> 
+            <br>
+  
         </div>
 
         <div id="Info_Geral" class="bloqueado">
@@ -473,21 +573,76 @@
         const dataInicialInput = document.getElementById('data-inicial');
         const dataFinalInput = document.getElementById('data-final');
 
+        const dataInicialAg = document.getElementById('data-inicialAg');
+
         const btn = document.getElementById('btn');
         const btn2 = document.getElementById('btn2');
+        const btnAg = document.getElementById('btnAg');
 
         const infoPara = document.getElementById('info');
+        const infoAg = document.getElementById('infoAg');
+
+        const dataAg = document.getElementById('dataAg');
+        const data = document.getElementById('Data');
 
         const meuDiv = document.getElementById('Info_Geral');
         const div1d = document.getElementById('1_dia');
         const div2d = document.getElementById('2_dia');
         const div3d = document.getElementById('3_dia');
 
+        const congAg = document.getElementById('CongregacaoAg');
+
+
+
         const dataInicialMinima = new Date();
         dataInicialMinima.setDate(dataInicialMinima.getDate() + 30);
         const minDate = dataInicialMinima.toISOString().split('T')[0];
         dataInicialInput.min = minDate;
 
+        const checpreag = document.getElementById('preag');
+
+        checpreag.addEventListener('change', () => {
+            if (checpreag.checked) {
+                dataAg.classList.remove('bloqueado');
+                dataAg.classList.add('quadro');
+                data.classList.remove('quadro');
+                data.classList.add('bloqueado');
+            }else{
+                data.classList.remove('bloqueado');
+                data.classList.add('quadro');
+                dataAg.classList.remove('quadro');
+                dataAg.classList.add('bloqueado');
+            }
+        });
+
+        // Localização do pre agendamento
+        btnAg.addEventListener('click', function() {
+
+            infoAg.textContent = "Aguarde...";
+            const dataInAg = new Date(dataInicialAg.value);
+            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg}`
+
+            fetch(urlAg)
+                .then(response => response.json()) // Converte a resposta em JSON
+                .then(msn => {
+
+                    console.log(msn);
+                    const informacao = msn;
+                    infoPara.textContent = informacao.split(':')[1];
+                    if(informacao.split(':')[0] == '0'){
+                        meuDiv.classList.remove('bloqueado');
+                        meuDiv.classList.add('quadro');
+                        btn2.classList.remove('botao-block');
+                        btn2.classList.add('botao-diferenciado');
+                    }else{ 
+                        meuDiv.classList.add('bloqueado');
+                        btn2.classList.add('botao-block');
+                    }
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
+                });
+            });
 
         dataInicialInput.addEventListener('input', () => {
 
@@ -505,6 +660,7 @@
             div1d.classList.add('bloqueado');
             div2d.classList.add('bloqueado');
             div3d.classList.add('bloqueado');
+
         });
 
         dataFinalInput.addEventListener('input', () => {
