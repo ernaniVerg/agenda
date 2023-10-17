@@ -241,6 +241,14 @@
             <br>
             <p id="infoAg"></p>
             <br>
+            <p id="nomeEveAg" class="bloque"></p>
+            <br>
+            <p id="departAg" class="bloque"></p>
+            <br>
+            <p id="dataIAg" class="bloque"></p>
+            <br>
+            <p id="dataOAg" class="bloque"></p>
+            <br>
             <button id="btnAg" class="botao-diferenciado">Localizar na Agenda</button> 
             <br>
 
@@ -615,6 +623,11 @@
             }
         });
 
+        const nomeEvAg = document.getElementById('nomeEvAg');
+        const departAg = document.getElementById('departAg');
+        const dataIAg = document.getElementById('dataIAg');
+        const dataOAg = document.getElementById('dataOAg');
+
         // Localização do pre agendamento
         btnAg.addEventListener('click', function() {
 
@@ -628,16 +641,20 @@
 
                     console.log(msn);
                     const informacao = msn;
-                    infoPara.textContent = informacao.split(':')[1];
-                    if(informacao.split(':')[0] == '0'){
-                        meuDiv.classList.remove('bloqueado');
-                        meuDiv.classList.add('quadro');
-                        btn2.classList.remove('botao-block');
-                        btn2.classList.add('botao-diferenciado');
-                    }else{ 
-                        meuDiv.classList.add('bloqueado');
-                        btn2.classList.add('botao-block');
+                    var ms = informacao.split(':');
+                    infoAg.textContent = ms[1];
+                    if(ms[0] == '0'){
+                        nomeEvAg.textContent = ms[1];
+                        departAg.textContent = ms[2];
+                        dataIAg.textContent = ms[3];
+                        dataOAg.textContent = ms[4];
+
+                        nomeEvAg.classList.remove("bloque");
+                        departAg.classList.remove("bloque");
+                        dataIAg.classList.remove("bloque");
+                        dataOAg.classList.remove("bloque");
                     }
+
                 })
                 .catch(error => {
                     console.error('Ocorreu um erro:', error);
