@@ -163,7 +163,7 @@
         <input type="date" id="data-inicialAg" name="data_inicialAg" required>
 
         <label for="igrejaAg">Congregação:</label>
-        <select id="igrejaAg" name="CongregacaoAg">
+        <select id="congAg" name="CongregacaoAg">
             <option value=""></option>
             <option value="Agudos Canaa">Agudos Canaa</option>
             <option value= "Agudos Pampulha">Agudos Pampulha</option>
@@ -598,9 +598,7 @@
         const div2d = document.getElementById('2_dia');
         const div3d = document.getElementById('3_dia');
 
-        const congAg = document.getElementById('CongregacaoAg');
-
-
+        const congAg = document.getElementById('congAg');
 
         const dataInicialMinima = new Date();
         dataInicialMinima.setDate(dataInicialMinima.getDate() + 30);
@@ -640,8 +638,8 @@
                 .then(msn => {
 
                     console.log(msn);
-                    const informacao = msn;
-                    var ms = informacao.split(':');
+                    const informacaoAg = msn;
+                    var ms = informacaoAg.split(':');
                     infoAg.textContent = ms[1];
                     if(ms[0] == '0'){
                         nomeEvAg.textContent = ms[1];
