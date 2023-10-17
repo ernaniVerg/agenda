@@ -631,7 +631,7 @@
 
             infoAg.textContent = "Aguarde...";
             const dataInAg = new Date(dataInicialAg.value);
-            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg}&dataIn=""&dataOut=""`
+            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg.value}&dataIn=""&dataOut=""`
 
             fetch(urlAg)
                 .then(response => response.json()) // Converte a resposta em JSON
