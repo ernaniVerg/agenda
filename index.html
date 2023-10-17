@@ -633,7 +633,7 @@
 
             infoAg.textContent = "Aguarde...";
             const dataInAg = new Date(dataInicialAg.value);
-            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg}`
+            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg}&dataIn=""&dataOut=""`
 
             fetch(urlAg)
                 .then(response => response.json()) // Converte a resposta em JSON
@@ -705,7 +705,7 @@
             const dataIn = `${dataInArray[0]}-${dataInArray[1]}-${dataInArray[2]}`;
             const dataFim = `${dataFimArray[0]}-${dataFimArray[1]}-${dataFimArray[2]}`;
 
-            const url = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?datain=${dataInOb}&dataout=${dataFimOb}`
+            const url = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?datain=${dataInOb}&dataout=${dataFimOb}&dataAg=""&congAg=""`
             
             console.log(dataIn)
             console.log(dataFim)
