@@ -629,6 +629,10 @@
         // Localização do pre agendamento
         btnAg.addEventListener('click', function() {
 
+            div1d.classList.add('bloqueado');
+            div2d.classList.add('bloqueado');
+            div3d.classList.add('bloqueado');
+
             var opi = "0";
             infoAg.textContent = "Aguarde...";
             const dataInAg = new Date(dataInicialAg.value);
