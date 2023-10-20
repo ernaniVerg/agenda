@@ -242,13 +242,10 @@
             <p id="infoAg"></p>
             <br>
             <p id="nomeEveAg">Nome do Evento: </p>
-            <br>
             <p id="departAg">Departamento: </p>
-            <br>
             <p id="dataIAg">Dias de Evento: </p>
-            <br>
             <p id="Rpre">Responsavel do Pré-Agendamento: </p>
-            <br>
+
             <button id="btnAg" class="botao-diferenciado">Localizar na Agenda</button> 
             <br>
 
@@ -632,6 +629,11 @@
             div1d.classList.add('bloqueado');
             div2d.classList.add('bloqueado');
             div3d.classList.add('bloqueado');
+
+            nomeEveAg.textContent = "Nome do Evento: ...";
+            departAg.textContent = "Departamento: ...";
+            dataIAg.textContent = "Dias de Evento: ...";
+            Rpre.textContent = "Responsavel do Pré-Agendamento: ...";
 
             var opi = "0";
             infoAg.textContent = "Aguarde...";
