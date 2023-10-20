@@ -621,10 +621,10 @@
             }
         });
 
-        const nomeEvAg = document.getElementById('nomeEvAg');
-        const departAg = document.getElementById('departAg');
-        const dataIAg = document.getElementById('dataIAg');
-        const dataOAg = document.getElementById('dataOAg');
+        var nomeEvAg = document.getElementById('nomeEvAg');
+        var departAg = document.getElementById('departAg');
+        var dataIAg = document.getElementById('dataIAg');
+        var dataOAg = document.getElementById('dataOAg');
 
         // Localização do pre agendamento
         btnAg.addEventListener('click', function() {
@@ -642,11 +642,13 @@
                     const informacaoAg = msn;
                     var ms = informacaoAg.split(':');
                     infoAg.textContent = ms[1];
+
                     if(ms[0] == '0'){
-                        nomeEvAg.textContent = "Nome do Evento: "+ms[3];
-                        departAg.textContent = "Departamento: "+ms[4];
-                        dataIAg.textContent = "Data Incial: "+ms[5];
-                        dataOAg.textContent = "Data Final: "+ms[6];
+
+                        nomeEvAg.textContent = "Nome do Evento: "+ms[1];
+                        departAg.textContent = "Departamento: "+ms[1];
+                        dataIAg.textContent = "Data Incial: "+ms[1];
+                        dataOAg.textContent = "Data Final: "+ms[1];
 
                         //nomeEvAg.classList.remove("bloque");
                         //departAg.classList.remove("bloque");
