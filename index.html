@@ -652,8 +652,21 @@
 
                         div1d.classList.remove('bloqueado');
                         div1d.classList.add('quadro');
-                    }else{
 
+                        if (ms[5] === 2){
+                            div2d.classList.remove('bloqueado');
+                            div2d.classList.add('quadro');
+                        }
+                        if (ms[5] === 3){
+                            div2d.classList.remove('bloqueado');
+                            div2d.classList.add('quadro');
+                            div3d.classList.remove('bloqueado');
+                            div3d.classList.add('quadro');
+                        }
+                    } else {
+                        div1d.classList.add('bloqueado');
+                        div2d.classList.add('bloqueado');
+                        div3d.classList.add('bloqueado');
                     }
 
                 })
