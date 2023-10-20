@@ -241,13 +241,13 @@
             <br>
             <p id="infoAg"></p>
             <br>
-            <p id="nomeEveAg" class="bloque"></p>
+            <p id="nomeEveAg">Nome do Evento: </p>
             <br>
-            <p id="departAg" class="bloque"></p>
+            <p id="departAg">Departamento: </p>
             <br>
-            <p id="dataIAg" class="bloque"></p>
+            <p id="dataIAg">Data Incial: </p>
             <br>
-            <p id="dataOAg" class="bloque"></p>
+            <p id="dataOAg">Data Final: </p>
             <br>
             <button id="btnAg" class="botao-diferenciado">Localizar na Agenda</button> 
             <br>
@@ -643,15 +643,15 @@
                     var ms = informacaoAg.split(':');
                     infoAg.textContent = ms[1];
                     if(ms[0] == '0'){
-                        nomeEvAg.textContent = ms[1];
-                        departAg.textContent = ms[2];
-                        dataIAg.textContent = ms[3];
-                        dataOAg.textContent = ms[4];
+                        nomeEvAg.textContent = "Nome do Evento: "+ms[3];
+                        departAg.textContent = "Departamento: "+ms[4];
+                        dataIAg.textContent = "Data Incial: "+ms[5];
+                        dataOAg.textContent = "Data Final: "+ms[6];
 
-                        nomeEvAg.classList.remove("bloque");
-                        departAg.classList.remove("bloque");
-                        dataIAg.classList.remove("bloque");
-                        dataOAg.classList.remove("bloque");
+                        //nomeEvAg.classList.remove("bloque");
+                        //departAg.classList.remove("bloque");
+                        //dataIAg.classList.remove("bloque");
+                        //dataOAg.classList.remove("bloque");
 
                         div1d.classList.remove('bloqueado');
                         div1d.classList.add('quadro');
