@@ -566,6 +566,7 @@
             </div>
 
             <input type="hidden" id="dataHoraEnvio" name="dataHoraEnvio">
+            <input type="hidden" id="line" name="line">
 
         <br>
         <button id="btn2" class="botao-block" type="submit">Enviar Formulário</button> 
@@ -622,6 +623,7 @@
         const departAg = document.getElementById('departAg');
         const dataIAg = document.getElementById('dataIAg');
         const Rpre = document.getElementById('Rpre');
+        const line = document.getElementById('line');
 
         // Localização do pre agendamento
         btnAg.addEventListener('click', function() {
@@ -634,6 +636,7 @@
             departAg.textContent = "Departamento: ...";
             dataIAg.textContent = "Dias de Evento: ...";
             Rpre.textContent = "Responsavel do Pré-Agendamento: ...";
+            line.textContent ="";
 
             var opi = "0";
             infoAg.textContent = "Aguarde...";
@@ -655,6 +658,7 @@
                         departAg.textContent = "Departamento:    "+ms[4];
                         dataIAg.textContent = "Dias de Evento:    "+ms[5];
                         Rpre.textContent = "Responsavel do Pré-Agendamento:    "+ms[6];
+                        line.textContent =ms[2];
 
                         div1d.classList.remove('bloqueado');
                         div1d.classList.add('quadro');
