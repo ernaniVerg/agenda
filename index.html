@@ -623,15 +623,20 @@
 
         checpreag.addEventListener('change', () => {
             if (checpreag.checked) {
+                
                 dataAg.classList.remove('bloqueado');
                 dataAg.classList.add('quadro');
                 data.classList.remove('quadro');
                 data.classList.add('bloqueado');
+                meuDiv.classList.add('bloqueado');
+
             }else{
+
                 data.classList.remove('bloqueado');
                 data.classList.add('quadro');
                 dataAg.classList.remove('quadro');
                 dataAg.classList.add('bloqueado');
+
             }
         });
 
