@@ -176,7 +176,7 @@
     <div id="dataAg" class="bloqueado">
         <h2>Dados do Pré-Agendamento</h2>
         <label for="data-inicialAg">Data Inicial:</label>
-        <input type="date" id="data-inicialAg" name="data_inicialAg" required>
+        <input type="date" id="data-inicialAg" name="data_inicialAg">
 
         <label for="igrejaAg">Congregação:</label>
         <select id="congAg" name="CongregacaoAg">
@@ -383,7 +383,7 @@
                 <br>
 
                 <label for="resp">Responsavel pelo preenchimento :</label>
-                <input type="text" name="responsavel" id="evento" required>
+                <input type="text" name="responsavel" id="responsavel" required>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email">
@@ -594,6 +594,8 @@
 
         const dataInicialInput = document.getElementById('data-inicial');
         const dataFinalInput = document.getElementById('data-final');
+        const even = document.getElementById('evento');
+        const resp = document.getElementById('responsavel');
 
         const dataInicialAg = document.getElementById('data-inicialAg');
 
@@ -606,6 +608,7 @@
 
         const dataAg = document.getElementById('dataAg');
         const data = document.getElementById('Data');
+
 
         const meuDiv = document.getElementById('Info_Geral');
         const div1d = document.getElementById('1_dia');
@@ -630,12 +633,22 @@
                 data.classList.add('bloqueado');
                 meuDiv.classList.add('bloqueado');
 
+                dataInicialInput.removeAttribute('required');
+                dataFinalInput.removeAttribute('required');
+                even.removeAttribute('required');
+                resp.removeAttribute('required');
+
             }else{
 
                 data.classList.remove('bloqueado');
                 data.classList.add('quadro');
                 dataAg.classList.remove('quadro');
                 dataAg.classList.add('bloqueado');
+
+                dataInicialInput.setAttribute('required',true);
+                dataFinalInput.setAttribute('required',true);
+                even.setAttribute('required',true);
+                resp.setAttribute('required',true);
 
             }
         });
