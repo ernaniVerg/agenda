@@ -176,7 +176,7 @@
     <div id="dataAg" class="bloqueado">
         <h2>Dados do Pré-Agendamento</h2>
         <label for="data-inicialAg">Data Inicial:</label>
-        <input type="date" id="data-inicialAg" name="data_inicialAg" required>
+        <input type="date" id="data-inicialAg" name="data_inicialAg">
 
         <label for="igrejaAg">Congregação:</label>
         <select id="congAg" name="CongregacaoAg">
@@ -383,7 +383,7 @@
                 <br>
 
                 <label for="resp">Responsavel pelo preenchimento :</label>
-                <input type="text" name="responsavel" id="evento" required>
+                <input type="text" name="responsavel" id="responsavel" required>
 
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email">
@@ -594,6 +594,8 @@
 
         const dataInicialInput = document.getElementById('data-inicial');
         const dataFinalInput = document.getElementById('data-final');
+        const even = document.getElementById('evento');
+        const resp = document.getElementById('responsavel');
 
         const dataInicialAg = document.getElementById('data-inicialAg');
 
@@ -606,6 +608,7 @@
 
         const dataAg = document.getElementById('dataAg');
         const data = document.getElementById('Data');
+
 
         const meuDiv = document.getElementById('Info_Geral');
         const div1d = document.getElementById('1_dia');
@@ -632,6 +635,11 @@
                 dataInicialInput.value ="";
                 dataFinalInput.value = "";
 
+                dataInicialInput.removeAttribute('required');
+                dataFinalInput.removeAttribute('required');
+                even.removeAttribute('required');
+                resp.removeAttribute('required');
+
             }else{
 
                 data.classList.remove('bloqueado');
@@ -640,6 +648,11 @@
                 dataAg.classList.add('bloqueado');
                 congAg.value = "";
                 dataInicialAg.value = "";
+
+                dataInicialInput.setAttribute('required',true);
+                dataFinalInput.setAttribute('required',true);
+                even.setAttribute('required',true);
+                resp.setAttribute('required',true);
 
             }
         });
@@ -683,10 +696,12 @@
                         departAg.textContent = "Departamento:    "+ms[4];
                         dataIAg.textContent = "Dias de Evento:    "+ms[5];
                         Rpre.textContent = "Responsavel do Pré-Agendamento:    "+ms[6];
-                        line.textContent =ms[2];
+                        line.value = ms[2];
 
                         div1d.classList.remove('bloqueado');
                         div1d.classList.add('quadro');
+                        btn2.classList.remove('botao-block');
+                        btn2.classList.add('botao-diferenciado');
 
                         if (ms[5] == '2'){
                             div2d.classList.remove('bloqueado');
@@ -702,6 +717,7 @@
                         div1d.classList.add('bloqueado');
                         div2d.classList.add('bloqueado');
                         div3d.classList.add('bloqueado');
+                        btn2.classList.add('botao-block');
                     }
 
                 })
