@@ -375,7 +375,7 @@
                     <option value="UJADB - Jovens | pr Ernani Vergniano ">Jovens - UJADB</option>
                     <option value="UVADB - Varões | ev José Algusto">Varões - UVADB</option>
                     <option value="UNADB - Adolecentes | pr Robson Palomares">Adolescentes - UNADB</option>
-                    <option value="Despartamento de Casais | pr Agnaldo M. Oliveira">Casais</option>
+                    <option value="Casais | pr Agnaldo M. Oliveira">Casais</option>
                     <option value="Crianças - ADKids | diac: Marcos e Beatriz">Crianças Ad Kids</option>
                     <option value="Igreja Local |">Igreja Local</option>
                 </select>
@@ -629,6 +629,8 @@
                 data.classList.remove('quadro');
                 data.classList.add('bloqueado');
                 meuDiv.classList.add('bloqueado');
+                dataInicialInput.value ="";
+                dataFinalInput.value = "";
 
             }else{
 
@@ -636,6 +638,8 @@
                 data.classList.add('quadro');
                 dataAg.classList.remove('quadro');
                 dataAg.classList.add('bloqueado');
+                congAg.value = "";
+                dataInicialAg.value = "";
 
             }
         });
