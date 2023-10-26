@@ -385,7 +385,7 @@
                 <br>
 
                 <label for="evento">Evento :</label>
-                <input type="text" name="Nome_do_evento" id="evento" pattern="^(?!.*(congresso|CONGRESSO|Congresso)).*" title="Não é permitido 'congresso', utiize festividade ou culto especial" required>
+                <input type="text" name="Nome_do_evento" id="evento" pattern="^(?!.*(congresso|CONGRESSO|Congresso))(?=(?:\S+\s){1,}\S+$).*$" title="Não use 'congresso' e use mais de uma palavra, ex Festividade dos Varões, Culto especial dos Jovens etc..." required>
                 <br>
 
                 <label for="Departamento">Departamento: </label>
