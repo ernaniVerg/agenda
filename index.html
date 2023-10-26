@@ -147,8 +147,14 @@
             pointer-events: none;
             display:none;
         }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
         /* Estilos CSS para o alerta de "Aguarde" */
         .aguarde-alert {
+            animation: blink 1s infinite;
             display: none;
             position: fixed;
             top: 0;
@@ -159,7 +165,7 @@
             color: white;
             text-align: center;
             padding: 20px;
-            font-size: 80px;
+            font-size: 70px;
         }
         @media screen and (max-width: 800px) {
             body {
@@ -606,9 +612,12 @@
             <br>
             <br>
             <br>
-            Aguarde um momento
+            Aguarde,
             <br>
-            Estamos enviando os dados do agendamento ...
+            Enviando os dados do agendamento.
+            <br>
+            <br>
+            ...
         </div>
 
         <br>
