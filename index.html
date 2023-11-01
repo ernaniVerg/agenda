@@ -10,8 +10,6 @@
             font-family: Arial, sans-serif;
             /*font-family: 'Roboto', sans-serif;*/
             background: linear-gradient(to bottom, #042d47, #1f1f1f);
-            background-image: url('ADBB.png'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
-            background-size: cover;
             color: #212121;
             margin: 0;
             padding: 0;
@@ -20,7 +18,13 @@
             align-items: center;
             align-self: center;
         }
-
+        .cont{
+            background-image: url('ADBB.png'); /* Substitua 'sua-imagem.jpg' pelo caminho da sua imagem */
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
         h1 {
             color: #ffffff; 
             text-align: center; /* Centralize o texto horizontalmente */
@@ -178,6 +182,7 @@
 
 </head>
 <body>
+    <div class="cont">
     <h1>Formulário de Eventos 2024</h1>
 
     <div id="data" class="quadro">
@@ -623,7 +628,7 @@
         <br>
         <button id="btn2" class="botao-block" type="submit">Enviar Formulário</button> 
     </form>       
-             
+    </div>       
 </body>
 
     <script>
