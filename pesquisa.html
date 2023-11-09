@@ -191,12 +191,14 @@
             <option value="2">por congregação</option>
             <option value= "3">por departamento</option>
         </select>
+
         <div id="data_ini_d">
             <br>
             <label for="data_ini">Data Inicial:</label>
             <input type="date" id="data_ini" name="data_p">
             <br>
         </div>
+
         <div id="cong_p_d"  class="bloque">
             <br>
             <label for="cong_p">Congregação:</label>
@@ -276,6 +278,7 @@
             </select>
             <br>
         </div>
+
         <div id="dep_p_d" class="bloque">
             <br>
             <label for="Departamento">Departamento: </label>
@@ -291,13 +294,13 @@
             </select>
             <br>
         </div>
+
         <br>
         <p id="info_p"></p>
         <br>
         <button id="btn_p" class="botao-diferenciado">Pesquisar</button> 
         <br>
     </div>             
-        <br>
         <br>
     <div id="plan" class="bloque">
         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-YxinIws0UURECMLup4mO3KVPockwIQpxjBq1A7PBYvNJcRskV_6fhEdspX2EQ5twmiGJJIPrDoXQ/pubhtml?gid=1628948076&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
@@ -354,7 +357,7 @@
             var opi = "3";
             const dataInP = new Date(dataIni.value);
             const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}opi=${opi}`
-            info_p.value = "Aguarde..."
+            info_p.textContent = "Aguarde..."
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
                 .then(msn => {
@@ -365,7 +368,7 @@
                         info_p.value = "";
                     }else{
                         plan.classList.add("bloque")
-                        info_p.value = msn
+                        info_p.textContent = msn
                     }
                     
                 })
