@@ -191,13 +191,14 @@
             <option value="2">por congregação</option>
             <option value= "3">por departamento</option>
         </select>
-        <br>
         <div id="data_ini_d">
+            <br>
             <label for="data_ini">Data Inicial:</label>
             <input type="date" id="data_ini" name="data_p">
+            <br>
         </div>
-        <br>
         <div id="cong_p_d"  class="bloque">
+            <br>
             <label for="cong_p">Congregação:</label>
             <select id="cong_p" name="Cong_p">
                 <option value=""></option>
@@ -273,10 +274,10 @@
                 <option value="Vila Industrial">Vila Industrial</option>
                 <option value="Vila São Paulo">Vila São Paulo</option>
             </select>
+            <br>
         </div>
-        <br>
-        <br>
         <div id="dep_p_d" class="bloque">
+            <br>
             <label for="Departamento">Departamento: </label>
             <select id="Departamento" name="Departamento">
                 <option value=""></option>
@@ -288,10 +289,11 @@
                 <option value="Crianças - ADKids | diac: Marcos e Beatriz|6">Crianças Ad Kids</option>
                 <option value="Igreja Local | |0">Igreja Local</option>
             </select>
+            <br>
         </div>
         <br>
-        <br>
         <p id="info_p"></p>
+        <br>
         <button id="btn_p" class="botao-diferenciado">Pesquisar</button> 
         <br>
     </div>             
@@ -317,7 +319,6 @@
 
         tipo.addEventListener("change", () => {
             const tp = tipo.value
-            info_p.value = "Aguarde..."
             if(tp === "1"){
 
                 data_d.classList.remove("bloque");
@@ -353,7 +354,7 @@
             var opi = "3";
             const dataInP = new Date(dataIni.value);
             const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}opi=${opi}`
-
+            info_p.value = "Aguarde..."
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
                 .then(msn => {
