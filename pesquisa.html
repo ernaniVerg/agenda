@@ -295,6 +295,11 @@
         <button id="btn_p" class="botao-diferenciado">Pesquisar</button> 
         <br>
     </div>             
+        <br>
+        <br>
+    <div id="plan" class="bloque">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-YxinIws0UURECMLup4mO3KVPockwIQpxjBq1A7PBYvNJcRskV_6fhEdspX2EQ5twmiGJJIPrDoXQ/pubhtml?gid=1628948076&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </div>
 </body>
 
 <script>
@@ -307,6 +312,7 @@
         const departamento_p = document.getElementById('Departamento');
         const dep_d = document.getElementById('dep_p_d');
         const btn_p = document.getElementById('btn_p');
+        const plan = document.getElementById('plan')
 
         tipo.addEventListener("change", () => {
             const tp = tipo.value
@@ -351,7 +357,11 @@
                 .then(msn => {
 
                     console.log(msn);
-                    const link = msn;
+                    if(msn ==="ok"){
+                        plan.classList.remove("bloque")
+                    }else{
+                        plan.classList.add("bloque")
+                    }
                     
                 })
                     
