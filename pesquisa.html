@@ -192,97 +192,103 @@
             <option value= "3">por departamento</option>
         </select>
         <br>
-        <label for="data_ini">Data Inicial:</label>
-        <input type="date" id="data_ini" name="data_p" class="bloque">
+        <div id="data_ini_d">
+            <label for="data_ini">Data Inicial:</label>
+            <input type="date" id="data_ini" name="data_p" class="bloque">
+        </div>
         <br>
-        <label for="cong_p">Congregação:</label>
-        <select id="cong_p" name="Cong_p" class="bloque">
-            <option value=""></option>
-            <option value="Agudos Canaa">Agudos Canaa</option>
-            <option value= "Agudos Pampulha">Agudos Pampulha</option>
-            <option value="Agudos Canaa">Agudos Canaa</option>
-            <option value="Agudos Simões">Agudos Simões</option>
-            <option value="Altos da Cidade">Altos da Cidade</option>
-            <option value="Arealva">Arealva</option>
-            <option value="Areiópolis">Areiópolis</option>
-            <option value="Avaí">Avaí</option>
-            <option value="Avanhandava">Avanhandava</option>
-            <option value="Balbinos">Balbinos</option>
-            <option value="Barra Bonita">Barra Bonita</option>
-            <option value="Bauru I">Bauru I</option>
-            <option value="Boracéia">Boracéia</option>
-            <option value="Cafelandia">Cafelandia</option>
-            <option value="Domelia">Domelia</option>
-            <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
-            <option value="Ferradura Mirim">Ferradura Mirim</option>
-            <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
-            <option value="Gasparini">Gasparini</option>
-            <option value="Iacanga">Iacanga</option>
-            <option value="Iaras">Iaras</option>
-            <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
-            <option value="Itapuí">Itapuí</option>
-            <option value="Jaraguá">Jaraguá</option>
-            <option value="Jardim Andorfato">Jardim Andorfato</option>
-            <option value="Jardim Bela Vista">Jardim Bela Vista</option>
-            <option value="Jardim Carolina">Jardim Carolina</option>
-            <option value="Jardim Chapadão">Jardim Chapadão</option>
-            <option value="Jardim Europa">Jardim Europa</option>
-            <option value="Jardim Flórida">Jardim Flórida</option>
-            <option value="Jardim Nicéia">Jardim Nicéia</option>
-            <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
-            <option value="Jardim Redentor">Jardim Redentor</option>
-            <option value="Jardim TV">Jardim TV</option>
-            <option value="Macatuba Casa de Paz">Macatuba Casa de Paz</option>
-            <option value="Macatuba Centro">Macatuba Centro</option>
-            <option value="Nova Mineiros">Nova Mineiros</option>
-            <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
-            <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
-            <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
-            <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
-            <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
-            <option value="Parque Real">Parque Real</option>
-            <option value="Parque Roosevelt">Parque Roosevelt</option>
-            <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
-            <option value="Parque Viaduto">Parque Viaduto</option>
-            <option value="Pederneiras - VP">Pederneiras - VP</option>
-            <option value="Pederneiras CN">Pederneiras CN</option>
-            <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
-            <option value="Piratininga">Piratininga</option>
-            <option value="Potunduva - Jaú">Potunduva - Jaú</option>
-            <option value="Pousada I">Pousada I</option>
-            <option value="Pousada II">Pousada II</option>
-            <option value="Presidente Alves">Presidente Alves</option>
-            <option value="Promissão">Promissão</option>
-            <option value="Reginopólis">Reginopólis</option>
-            <option value="Restituição em Cristo">Restituição em Cristo</option>
-            <option value="Santa  Cecília">Santa Cecília</option>
-            <option value="Santa Candida">Santa Candida</option>
-            <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
-            <option value="Santa Luzia">Santa Luzia</option>
-            <option value="Santa Terezinha">Santa Terezinha</option>
-            <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
-            <option value="São Manoel">São Manoel</option>
-            <option value="Sarutaiá">Sarutaiá</option>
-            <option value="Sede Catedral">Sede Catedral</option>
-            <option value="Tangarás">Tangarás</option>
-            <option value="Vila Dutra">Vila Dutra</option>
-            <option value="Vila Indepedendência">Vila Independência</option>
-            <option value="Vila Industrial">Vila Industrial</option>
-            <option value="Vila São Paulo">Vila São Paulo</option>
-        </select>
+            <div id="cong_p_d"  class="bloque">
+            <label for="cong_p">Congregação:</label>
+            <select id="cong_p" name="Cong_p">
+                <option value=""></option>
+                <option value="Agudos Canaa">Agudos Canaa</option>
+                <option value= "Agudos Pampulha">Agudos Pampulha</option>
+                <option value="Agudos Canaa">Agudos Canaa</option>
+                <option value="Agudos Simões">Agudos Simões</option>
+                <option value="Altos da Cidade">Altos da Cidade</option>
+                <option value="Arealva">Arealva</option>
+                <option value="Areiópolis">Areiópolis</option>
+                <option value="Avaí">Avaí</option>
+                <option value="Avanhandava">Avanhandava</option>
+                <option value="Balbinos">Balbinos</option>
+                <option value="Barra Bonita">Barra Bonita</option>
+                <option value="Bauru I">Bauru I</option>
+                <option value="Boracéia">Boracéia</option>
+                <option value="Cafelandia">Cafelandia</option>
+                <option value="Domelia">Domelia</option>
+                <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
+                <option value="Ferradura Mirim">Ferradura Mirim</option>
+                <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
+                <option value="Gasparini">Gasparini</option>
+                <option value="Iacanga">Iacanga</option>
+                <option value="Iaras">Iaras</option>
+                <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
+                <option value="Itapuí">Itapuí</option>
+                <option value="Jaraguá">Jaraguá</option>
+                <option value="Jardim Andorfato">Jardim Andorfato</option>
+                <option value="Jardim Bela Vista">Jardim Bela Vista</option>
+                <option value="Jardim Carolina">Jardim Carolina</option>
+                <option value="Jardim Chapadão">Jardim Chapadão</option>
+                <option value="Jardim Europa">Jardim Europa</option>
+                <option value="Jardim Flórida">Jardim Flórida</option>
+                <option value="Jardim Nicéia">Jardim Nicéia</option>
+                <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
+                <option value="Jardim Redentor">Jardim Redentor</option>
+                <option value="Jardim TV">Jardim TV</option>
+                <option value="Macatuba Casa de Paz">Macatuba Casa de Paz</option>
+                <option value="Macatuba Centro">Macatuba Centro</option>
+                <option value="Nova Mineiros">Nova Mineiros</option>
+                <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
+                <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
+                <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
+                <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
+                <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
+                <option value="Parque Real">Parque Real</option>
+                <option value="Parque Roosevelt">Parque Roosevelt</option>
+                <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
+                <option value="Parque Viaduto">Parque Viaduto</option>
+                <option value="Pederneiras - VP">Pederneiras - VP</option>
+                <option value="Pederneiras CN">Pederneiras CN</option>
+                <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
+                <option value="Piratininga">Piratininga</option>
+                <option value="Potunduva - Jaú">Potunduva - Jaú</option>
+                <option value="Pousada I">Pousada I</option>
+                <option value="Pousada II">Pousada II</option>
+                <option value="Presidente Alves">Presidente Alves</option>
+                <option value="Promissão">Promissão</option>
+                <option value="Reginopólis">Reginopólis</option>
+                <option value="Restituição em Cristo">Restituição em Cristo</option>
+                <option value="Santa  Cecília">Santa Cecília</option>
+                <option value="Santa Candida">Santa Candida</option>
+                <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
+                <option value="Santa Luzia">Santa Luzia</option>
+                <option value="Santa Terezinha">Santa Terezinha</option>
+                <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
+                <option value="São Manoel">São Manoel</option>
+                <option value="Sarutaiá">Sarutaiá</option>
+                <option value="Sede Catedral">Sede Catedral</option>
+                <option value="Tangarás">Tangarás</option>
+                <option value="Vila Dutra">Vila Dutra</option>
+                <option value="Vila Indepedendência">Vila Independência</option>
+                <option value="Vila Industrial">Vila Industrial</option>
+                <option value="Vila São Paulo">Vila São Paulo</option>
+            </select>
+        </div>
         <br>
         <br>
-        <label for="Departamento">Departamento: </label>
-        <select id="Departamento" name="Departamento" class="bloque">
-            <option value=""></option>
-            <option value="CIBE - Irmãs/Circulo de oração | pra Elza Vergniano|1">Irmãs/Circulo de oração - CIBE</option>
-            <option value="UJADB - Jovens | pr Ernani Vergniano|2">Jovens - UJADB</option>
-            <option value="UVADB - Varões | ev José Algusto|3">Varões - UVADB</option>
-            <option value="UNADB - Adolecentes | pr Robson Palomares|4">Adolescentes - UNADB</option>
-            <option value="Casais | pr Agnaldo M. Oliveira|5">Casais</option>
-            <option value="Crianças - ADKids | diac: Marcos e Beatriz|6">Crianças Ad Kids</option>
-            <option value="Igreja Local | |0">Igreja Local</option>
-        </select>
+        <div id="dep_p" class="bloque">
+            <label for="Departamento">Departamento: </label>
+            <select id="Departamento" name="Departamento">
+                <option value=""></option>
+                <option value="CIBE - Irmãs/Circulo de oração | pra Elza Vergniano|1">Irmãs/Circulo de oração - CIBE</option>
+                <option value="UJADB - Jovens | pr Ernani Vergniano|2">Jovens - UJADB</option>
+                <option value="UVADB - Varões | ev José Algusto|3">Varões - UVADB</option>
+                <option value="UNADB - Adolecentes | pr Robson Palomares|4">Adolescentes - UNADB</option>
+                <option value="Casais | pr Agnaldo M. Oliveira|5">Casais</option>
+                <option value="Crianças - ADKids | diac: Marcos e Beatriz|6">Crianças Ad Kids</option>
+                <option value="Igreja Local | |0">Igreja Local</option>
+            </select>
+        </div>
         <br>
         <br>
         <p id="infoAg"></p>
@@ -295,37 +301,40 @@
 
         const tipo = document.getElementById('tipo');
         const dataIni = document.getElementById('data_ini');
+        const data_d = document.getElementById('data_ini_d')
         const cong_p = document.getElementById('cong_p');
+        const cong_p_d = document.getElementById('cong_p_d');
         const departamento_p = document.getElementById('Departamento');
+        const dep_d = document.getElementById('dep_p_d');
         const btn_p = document.getElementById('btn_p');
 
         tipo.addEventListener("change", () => {
             const tp = tipo.value
             if(tp === "1"){
 
-                dataIni.classList.remove("bloque");
+                data_d.classList.remove("bloque");
                 cong_p.value = "";
                 departamento_p.value = "";
-                cong_p.classList.add("bloque")
+                cong_p_d.classList.add("bloque")
                 departamento_p.add("bloque")
 
             }
             if(tp === "2"){
 
-                cong_p.classList.remove("bloque");
+                cong_p_d.classList.remove("bloque");
                 dataIni.value = "";
                 departamento_p.value = "";
-                dataIni.classList.add("bloque")
-                departamento_p.add("bloque")
+                data_d.classList.add("bloque")
+                dep_d.classList.add("bloque")
 
             }
-            if(tp === "2"){
+            if(tp === "3"){
 
-                departamento_p.classList.remove("bloque");
+                dep_d.classList.remove("bloque");
                 dataIni.value = "";
                 cong_p.value = "";
-                dataIni.classList.add("bloque")
-                cong_p.add("bloque")
+                data_d.classList.add("bloque")
+                cong_p_d.classList.add("bloque")
 
             }
         });    
@@ -335,7 +344,7 @@
         btn_p.addEventListener('click', function() {
             var opi = "3";
             const dataInP = new Date(dataIni.value);
-            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p}&dep_p=${departamento_p}opi=${opi}`
+            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}opi=${opi}`
 
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
