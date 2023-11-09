@@ -183,20 +183,20 @@
 
     <div id="pesquisa" class="quadro">
 
-        <h2>Dados</h2>
-        <label for="cong_p">Congregação:</label>
-
-        <select id="cong_p" name="Cong_p">
-            <option value="data">por data</option>
-            <option value="congregacao">por congregação</option>
-            <option value= "departamento">por departamento</option>
-        </select>
-
-        <label for="data_ini" class="bloque">Data Inicial:</label>
-        <input type="date" id="data_ini" name="data_p">
+        <h2>Pesquisa de Eventos</h2>
         <br>
-        <label for="cong_p" class="bloque">Congregação:</label>
-        <select id="cong_p" name="Cong_p">
+        <label for="tipo">Tipo de pesquisa</label>
+        <select id="tipo" name="tipo">
+            <option value="1">por data</option>
+            <option value="2">por congregação</option>
+            <option value= "3">por departamento</option>
+        </select>
+        <br>
+        <label for="data_ini">Data Inicial:</label>
+        <input type="date" id="data_ini" name="data_p" class="bloque">
+        <br>
+        <label for="cong_p">Congregação:</label>
+        <select id="cong_p" name="Cong_p" class="bloque">
             <option value=""></option>
             <option value="Agudos Canaa">Agudos Canaa</option>
             <option value= "Agudos Pampulha">Agudos Pampulha</option>
@@ -272,8 +272,8 @@
         </select>
         <br>
         <br>
-        <label for="Departamento" class="bloque">Departamento: </label>
-        <select id="Departamento" name="Departamento">
+        <label for="Departamento">Departamento: </label>
+        <select id="Departamento" name="Departamento" class="bloque">
             <option value=""></option>
             <option value="CIBE - Irmãs/Circulo de oração | pra Elza Vergniano|1">Irmãs/Circulo de oração - CIBE</option>
             <option value="UJADB - Jovens | pr Ernani Vergniano|2">Jovens - UJADB</option>
@@ -293,14 +293,49 @@
 
 <script>
 
+        const tipo = document.getElementById('tipo');
         const dataIni = document.getElementById('data_ini');
         const cong_p = document.getElementById('cong_p');
         const departamento_p = document.getElementById('Departamento');
         const btn_p = document.getElementById('btn_p');
+
+        tipo.addEventListener("change", () => {
+            const tp = tipo.value
+            if(tp === "1"){
+
+                dataIni.classList.remove("bloque");
+                cong_p.value = "";
+                departamento_p.value = "";
+                cong_p.classList.add("bloque")
+                departamento_p.add("bloque")
+
+            }
+            if(tp === "2"){
+
+                cong_p.classList.remove("bloque");
+                dataIni.value = "";
+                departamento_p.value = "";
+                dataIni.classList.add("bloque")
+                departamento_p.add("bloque")
+
+            }
+            if(tp === "2"){
+
+                departamento_p.classList.remove("bloque");
+                dataIni.value = "";
+                cong_p.value = "";
+                dataIni.classList.add("bloque")
+                cong_p.add("bloque")
+
+            }
+        });    
+        
+
+
         btn_p.addEventListener('click', function() {
-            var opi = 3;
+            var opi = "3";
             const dataInP = new Date(dataIni.value);
-            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInP}&congAg=${cong_p}&opi=${opi}`
+            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p}&dep_p=${departamento_p}opi=${opi}`
 
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
