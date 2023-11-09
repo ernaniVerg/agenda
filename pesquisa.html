@@ -194,10 +194,10 @@
         <br>
         <div id="data_ini_d">
             <label for="data_ini">Data Inicial:</label>
-            <input type="date" id="data_ini" name="data_p" class="bloque">
+            <input type="date" id="data_ini" name="data_p">
         </div>
         <br>
-            <div id="cong_p_d"  class="bloque">
+        <div id="cong_p_d"  class="bloque">
             <label for="cong_p">Congregação:</label>
             <select id="cong_p" name="Cong_p">
                 <option value=""></option>
@@ -316,7 +316,7 @@
                 cong_p.value = "";
                 departamento_p.value = "";
                 cong_p_d.classList.add("bloque")
-                departamento_p.add("bloque")
+                departamento_p.classList.add("bloque")
 
             }
             if(tp === "2"){
