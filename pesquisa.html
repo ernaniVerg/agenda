@@ -291,7 +291,7 @@
         </div>
         <br>
         <br>
-        <p id="infoAg"></p>
+        <p id="info_p"></p>
         <button id="btn_p" class="botao-diferenciado">Pesquisar</button> 
         <br>
     </div>             
@@ -313,9 +313,11 @@
         const dep_d = document.getElementById('dep_p_d');
         const btn_p = document.getElementById('btn_p');
         const plan = document.getElementById('plan')
+        const info_p = document.getElementById("info_p")
 
         tipo.addEventListener("change", () => {
             const tp = tipo.value
+            info_p.value = "Aguarde..."
             if(tp === "1"){
 
                 data_d.classList.remove("bloque");
@@ -359,8 +361,10 @@
                     console.log(msn);
                     if(msn ==="ok"){
                         plan.classList.remove("bloque")
+                        info_p.value = "";
                     }else{
                         plan.classList.add("bloque")
+                        info_p.value = msn
                     }
                     
                 })
