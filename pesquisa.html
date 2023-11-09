@@ -184,10 +184,18 @@
     <div id="pesquisa" class="quadro">
 
         <h2>Dados</h2>
-        <label for="data_ini">Data Inicial:</label>
+        <label for="cong_p">Congregação:</label>
+
+        <select id="cong_p" name="Cong_p">
+            <option value="data">por data</option>
+            <option value="congregacao">por congregação</option>
+            <option value= "departamento">por departamento</option>
+        </select>
+
+        <label for="data_ini" class="bloque">Data Inicial:</label>
         <input type="date" id="data_ini" name="data_p">
         <br>
-        <label for="cong_p">Congregação:</label>
+        <label for="cong_p" class="bloque">Congregação:</label>
         <select id="cong_p" name="Cong_p">
             <option value=""></option>
             <option value="Agudos Canaa">Agudos Canaa</option>
@@ -264,7 +272,7 @@
         </select>
         <br>
         <br>
-        <label for="Departamento">Departamento: </label>
+        <label for="Departamento" class="bloque">Departamento: </label>
         <select id="Departamento" name="Departamento">
             <option value=""></option>
             <option value="CIBE - Irmãs/Circulo de oração | pra Elza Vergniano|1">Irmãs/Circulo de oração - CIBE</option>
@@ -290,11 +298,11 @@
         const departamento_p = document.getElementById('Departamento');
         const btn_p = document.getElementById('btn_p');
         btn_p.addEventListener('click', function() {
-
+            var opi = 3;
             const dataInP = new Date(dataIni.value);
-            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg.value}&opi=${opi}`
+            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInP}&congAg=${cong_p}&opi=${opi}`
 
-            fetch(urlAg)
+            fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
                 .then(msn => {
 
