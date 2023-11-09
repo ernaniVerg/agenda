@@ -1,0 +1,309 @@
+<!DOCTYPE html lang="pt-br">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Eventos AD Bras Bauru - 2024</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("ADBB.png");
+            /*background: linear-gradient(to bottom, #042d47, #2089af);*/
+            color: #212121;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            /*max-width: 1200px;*/
+            align-items: center;
+            align-self: center;
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+        }
+            h1 {
+            color: #ffffff; 
+            text-align: center; /* Centralize o texto horizontalmente */
+            font-size: 60px; /* Tamanho da fonte */
+        }
+        h2 {
+            color: #170045; /* Azul Marinho */
+            text-align: center; /* Centralize o texto horizontalmente */
+            font-size: 50px; /* Tamanho da fonte */
+        }
+
+       .quadro {
+            border: 4px solid #23055f; /* Espessura e cor da borda */
+            padding: 40px; /* Espaçamento interno para criar margem em torno do conteúdo */
+            margin: 40px; /* Espaçamento externo para separar o quadro de outros elementos */
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255,0.75);
+            box-shadow: 0 0 30px rgba(108, 108, 108, 0.4);
+            font-size: 30px; /* Tamanho da fonte */
+            align-items: center;
+            align-self: center;
+        }
+        .botao-diferenciado {
+            background-color: #3498db; /* Cor de fundo */
+            color: #fff; /* Cor do texto */
+            border: none; /* Remove a borda */
+            border-radius: 40px; /* Borda arredondada */
+            padding: 30px 40px; /* Espaçamento interno (altura x largura) */
+            font-size: 40px; /* Tamanho da fonte */
+            cursor: pointer; /* Mude o cursor ao passar o mouse */
+            text-align: center; /* Centralize o texto horizontalmente */
+            display: block; /* Torna o botão um bloco para centralizá-lo verticalmente */
+            margin: 0 auto; /* Centralize o botão verticalmente */
+        }
+        .botao-diferenciado:hover {
+            background-color: #2980b9; /* Cor de fundo quando passar o mouse */
+        }
+        .botao-block {
+            background-color: #b0b0b0; /* Cor de fundo */
+            color: #fff; /* Cor do texto */
+            border: none; /* Remove a borda */
+            border-radius: 40px; /* Borda arredondada */
+            padding: 30px 40px; /* Espaçamento interno (altura x largura) */
+            font-size: 40px; /* Tamanho da fonte */
+            cursor: pointer; /* Mude o cursor ao passar o mouse */
+            text-align: center; /* Centralize o texto horizontalmente */
+            display: block; /* Torna o botão um bloco para centralizá-lo verticalmente */
+            margin: 0 auto; /* Centralize o botão verticalmente */
+            pointer-events: none;
+        }
+
+        label {
+            display: block; /* Coloca cada rótulo em uma nova linha */
+            margin-bottom: 20px; /* Espaçamento entre rótulos */
+            font-weight: bold; /* Estilo de fonte em negrito para rótulos */
+            font-size: 30px; /* Tamanho da fonte */
+            padding: 10px; /* Espaçamento interno */
+        }
+
+        input[type="text"],
+        input[type="email"] 
+        {
+            width: 80%; /* Largura total do container pai */
+            padding: 20px; /* Espaçamento interno */
+            margin-bottom: 40px; /* Espaçamento entre campos */
+            border: 2px solid #ccc; /* Borda com cor */
+            border-radius: 10px; /* Borda arredondada */
+            font-size: 30px; /* Tamanho da fonte */
+        }
+
+        input[type="date"],
+        input[type="time"]
+        {
+            width: 60%; /* Largura total do container pai */
+            padding: 20px; /* Espaçamento interno */
+            margin-bottom: 40px; /* Espaçamento entre campos */
+            border: 2px solid #ccc; /* Borda com cor */
+            border-radius: 10px; /* Borda arredondada */
+            font-size: 30px; /* Tamanho da fonte */
+        }
+
+        input[type="checkbox"]{        
+            width: 40px;
+            height: 40px
+        }
+
+        select {
+            /*appearance: none;  Remove o estilo padrão do sistema */
+            padding: 20px; /* Espaçamento interno */
+            border: 2px solid #ccc; /* Borda com cor */
+            border-radius: 10px; /* Borda arredondada */
+            background-color: #fff; /* Cor de fundo */
+            font-size: 30px; /* Tamanho da fonte */
+            width: 80%; /* Largura do select */
+            cursor: pointer; /* Cursor de seta */
+        }
+
+        select option {
+            background-color: #fff; /* Cor de fundo das opções */
+            color: #333; /* Cor do texto das opções */
+        }
+
+        select:focus {
+            border-color: #007bff; /* Cor da borda quando o select está focado */
+        }
+
+        .bloqueado {
+            border: 4px solid #23055f; /* Espessura e cor da borda */
+            padding: 40px; /* Espaçamento interno para criar margem em torno do conteúdo */
+            margin: 40px; /* Espaçamento externo para separar o quadro de outros elementos */
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f5f5f5;
+            box-shadow: 0 0 40px rgba(108, 108, 108, 0.1);
+            pointer-events: none;
+            display:none;
+            /*visibility: hidden;*/
+        }
+        .bloque {
+            pointer-events: none;
+            display:none;
+        }
+
+@keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.35; }
+            100% { opacity: 1; }
+        }
+        /* Estilos CSS para o alerta de "Aguarde" */
+        .aguarde-alert {
+            animation: blink 3s infinite;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 70px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulário de Eventos 2024</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Formulario de Eventos</a></li>
+                <li><a href="pesquisa.html">Pesquisa de Agendamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="pesquisa" class="quadro">
+
+        <h2>Dados</h2>
+        <label for="data_ini">Data Inicial:</label>
+        <input type="date" id="data_ini" name="data_p">
+        <br>
+        <label for="cong_p">Congregação:</label>
+        <select id="cong_p" name="Cong_p">
+            <option value=""></option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value= "Agudos Pampulha">Agudos Pampulha</option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value="Agudos Simões">Agudos Simões</option>
+            <option value="Altos da Cidade">Altos da Cidade</option>
+            <option value="Arealva">Arealva</option>
+            <option value="Areiópolis">Areiópolis</option>
+            <option value="Avaí">Avaí</option>
+            <option value="Avanhandava">Avanhandava</option>
+            <option value="Balbinos">Balbinos</option>
+            <option value="Barra Bonita">Barra Bonita</option>
+            <option value="Bauru I">Bauru I</option>
+            <option value="Boracéia">Boracéia</option>
+            <option value="Cafelandia">Cafelandia</option>
+            <option value="Domelia">Domelia</option>
+            <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
+            <option value="Ferradura Mirim">Ferradura Mirim</option>
+            <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
+            <option value="Gasparini">Gasparini</option>
+            <option value="Iacanga">Iacanga</option>
+            <option value="Iaras">Iaras</option>
+            <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
+            <option value="Itapuí">Itapuí</option>
+            <option value="Jaraguá">Jaraguá</option>
+            <option value="Jardim Andorfato">Jardim Andorfato</option>
+            <option value="Jardim Bela Vista">Jardim Bela Vista</option>
+            <option value="Jardim Carolina">Jardim Carolina</option>
+            <option value="Jardim Chapadão">Jardim Chapadão</option>
+            <option value="Jardim Europa">Jardim Europa</option>
+            <option value="Jardim Flórida">Jardim Flórida</option>
+            <option value="Jardim Nicéia">Jardim Nicéia</option>
+            <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
+            <option value="Jardim Redentor">Jardim Redentor</option>
+            <option value="Jardim TV">Jardim TV</option>
+            <option value="Macatuba Casa de Paz">Macatuba Casa de Paz</option>
+            <option value="Macatuba Centro">Macatuba Centro</option>
+            <option value="Nova Mineiros">Nova Mineiros</option>
+            <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
+            <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
+            <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
+            <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
+            <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
+            <option value="Parque Real">Parque Real</option>
+            <option value="Parque Roosevelt">Parque Roosevelt</option>
+            <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
+            <option value="Parque Viaduto">Parque Viaduto</option>
+            <option value="Pederneiras - VP">Pederneiras - VP</option>
+            <option value="Pederneiras CN">Pederneiras CN</option>
+            <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
+            <option value="Piratininga">Piratininga</option>
+            <option value="Potunduva - Jaú">Potunduva - Jaú</option>
+            <option value="Pousada I">Pousada I</option>
+            <option value="Pousada II">Pousada II</option>
+            <option value="Presidente Alves">Presidente Alves</option>
+            <option value="Promissão">Promissão</option>
+            <option value="Reginopólis">Reginopólis</option>
+            <option value="Restituição em Cristo">Restituição em Cristo</option>
+            <option value="Santa  Cecília">Santa Cecília</option>
+            <option value="Santa Candida">Santa Candida</option>
+            <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
+            <option value="Santa Luzia">Santa Luzia</option>
+            <option value="Santa Terezinha">Santa Terezinha</option>
+            <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
+            <option value="São Manoel">São Manoel</option>
+            <option value="Sarutaiá">Sarutaiá</option>
+            <option value="Sede Catedral">Sede Catedral</option>
+            <option value="Tangarás">Tangarás</option>
+            <option value="Vila Dutra">Vila Dutra</option>
+            <option value="Vila Indepedendência">Vila Independência</option>
+            <option value="Vila Industrial">Vila Industrial</option>
+            <option value="Vila São Paulo">Vila São Paulo</option>
+        </select>
+        <br>
+        <br>
+        <label for="Departamento">Departamento: </label>
+        <select id="Departamento" name="Departamento">
+            <option value=""></option>
+            <option value="CIBE - Irmãs/Circulo de oração | pra Elza Vergniano|1">Irmãs/Circulo de oração - CIBE</option>
+            <option value="UJADB - Jovens | pr Ernani Vergniano|2">Jovens - UJADB</option>
+            <option value="UVADB - Varões | ev José Algusto|3">Varões - UVADB</option>
+            <option value="UNADB - Adolecentes | pr Robson Palomares|4">Adolescentes - UNADB</option>
+            <option value="Casais | pr Agnaldo M. Oliveira|5">Casais</option>
+            <option value="Crianças - ADKids | diac: Marcos e Beatriz|6">Crianças Ad Kids</option>
+            <option value="Igreja Local | |0">Igreja Local</option>
+        </select>
+        <br>
+        <br>
+        <p id="infoAg"></p>
+        <button id="btn_p" class="botao-diferenciado">Pesquisar</button> 
+        <br>
+    </div>             
+</body>
+
+<script>
+
+        const dataIni = document.getElementById('data_ini');
+        const cong_p = document.getElementById('cong_p');
+        const departamento_p = document.getElementById('Departamento');
+        const btn_p = document.getElementById('btn_p');
+        btn_p.addEventListener('click', function() {
+
+            const dataInP = new Date(dataIni.value);
+            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg.value}&opi=${opi}`
+
+            fetch(urlAg)
+                .then(response => response.json()) // Converte a resposta em JSON
+                .then(msn => {
+
+                    console.log(msn);
+                    const link = msn;
+                    
+                })
+                    
+        });
+
+    </script>
+</html>
