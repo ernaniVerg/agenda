@@ -456,7 +456,7 @@
                         cell6.innerHTML = cv(dados[i][4]);
                         cell7.innerHTML = cv(dados[i][5]);
                         
-                        if(dados[i][10] != ""){
+                        if(!dados[i][10]){
                             var stat = "Pré- Agendado"
                         }else{
                             var stat = "Agendado"
