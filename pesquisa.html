@@ -329,6 +329,7 @@
                 departamento_p.value = "";
                 cong_p_d.classList.add("bloque")
                 departamento_p.classList.add("bloque")
+                
 
             }
             if(tp === "2"){
@@ -336,8 +337,8 @@
                 cong_p_d.classList.remove("bloque");
                 dataIni.value = "";
                 departamento_p.value = "";
-                data_d.classList.add("bloque")
-                dep_d.classList.add("bloque")
+                data_d.classList.add("bloque");
+                dep_d.classList.add("bloque");
 
             }
             if(tp === "3"){
@@ -345,8 +346,8 @@
                 dep_d.classList.remove("bloque");
                 dataIni.value = "";
                 cong_p.value = "";
-                data_d.classList.add("bloque")
-                cong_p_d.classList.add("bloque")
+                data_d.classList.add("bloque");
+                cong_p_d.classList.add("bloque");
 
             }
         });    
@@ -355,10 +356,10 @@
 
         btn_p.addEventListener('click', function() {
             var opi = "3";
-            if (dataIni.value != ""){
+            if (tipo.value === "1"){
                 const dataInP = new Date(dataIni.value);
             }else {
-                const dataInP ="";
+                const dataInP = "";
             }
             const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}&opi=${opi}`
             info_p.textContent = "Aguarde..."
