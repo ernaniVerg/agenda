@@ -187,17 +187,9 @@
         <br>
         <label for="tipo">Tipo de pesquisa</label>
         <select id="tipo" name="tipo">
-            <option value="1">por data</option>
             <option value="2">por congregação</option>
             <option value= "3">por departamento</option>
         </select>
-
-        <div id="data_ini_d">
-            <br>
-            <label for="data_ini">Data Inicial:</label>
-            <input type="date" id="data_ini" name="data_ini">
-            <br>
-        </div>
 
         <div id="cong_p_d"  class="bloque">
             <br>
@@ -310,47 +302,27 @@
 <script>
 
         const tipo = document.getElementById('tipo');
-        const dataIni = document.getElementById('data_ini');
-        const data_d = document.getElementById('data_ini_d')
         const cong_p = document.getElementById('cong_p');
         const cong_p_d = document.getElementById('cong_p_d');
         const departamento_p = document.getElementById('Departamento');
         const dep_d = document.getElementById('dep_p_d');
         const btn_p = document.getElementById('btn_p');
-        const plan = document.getElementById('plan')
-        const info_p = document.getElementById("info_p")
-
-        departamento_p.value = "";
-        cong_p.value = "";
-        dataIni.value ="";
+        const plan = document.getElementById('plan');
+        const info_p = document.getElementById("info_p");
 
         tipo.addEventListener("change", () => {
             const tp = tipo.value
-            if(tp === "1"){
-
-                data_d.classList.remove("bloque");
-                cong_p.value = "";
-                departamento_p.value = "";
-                cong_p_d.classList.add("bloque")
-                departamento_p.classList.add("bloque")
-                
-
-            }
             if(tp === "2"){
 
                 cong_p_d.classList.remove("bloque");
-                dataIni.value = "";
                 departamento_p.value = "";
-                data_d.classList.add("bloque");
                 dep_d.classList.add("bloque");
 
             }
             if(tp === "3"){
 
                 dep_d.classList.remove("bloque");
-                dataIni.value = "";
                 cong_p.value = "";
-                data_d.classList.add("bloque");
                 cong_p_d.classList.add("bloque");
 
             }
@@ -360,13 +332,7 @@
 
         btn_p.addEventListener('click', function() {
             var opi = "3";
-            const tp = tipo.value;
-            if (tp === "1"){
-                const dataInP = new Date(dataIni.value);
-            }else {
-                const dataInP = "";
-            }
-            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}&opi=${opi}`
+            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?cong_p=${cong_p.value}&dep_p=${departamento_p.value}&opi=${opi}`
             info_p.textContent = "Aguarde..."
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
