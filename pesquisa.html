@@ -356,7 +356,7 @@
         btn_p.addEventListener('click', function() {
             var opi = "3";
             const dataInP = new Date(dataIni.value);
-            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}opi=${opi}`
+            const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?data_p=${dataInP}&cong_p=${cong_p.value}&dep_p=${departamento_p.value}&opi=${opi}`
             info_p.textContent = "Aguarde..."
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
