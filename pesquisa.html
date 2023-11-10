@@ -444,9 +444,9 @@
                         cell2.innerHTML = cv(dados[i][0]);
                         cell3.innerHTML = dados[i][1];
                         cell4.innerHTML = dados[i][2];
-                        cell5.innerHTML = cv(dados[i][3]);
+                        cell5.innerHTML = dados[i][3].split("|")[0];
                         cell6.innerHTML = cv(dados[i][4]);
-                        cell7.innerHTML = dados[i][5];
+                        cell7.innerHTML = cv(dados[i][5]);
                         
                         if(dados[i][8] != ""){
                             var stat = "Pré- Agendado"
