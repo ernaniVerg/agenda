@@ -187,6 +187,12 @@
             width: 100%;
         }
 
+        .tab {
+            max-height: 300px; /* Altura máxima da tabela antes de aparecer a barra de rolagem */
+            max-width: 100%;
+            overflow: auto; /* Adiciona barra de rolagem quando a tabela excede a altura máxima */
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
@@ -435,11 +441,11 @@
                         var cell8 = row.insertCell(7);
 
                         cell1.innerHTML = dados[i][8];
-                        cell2.innerHTML = dados[i][0];
+                        cell2.innerHTML = cv(dados[i][0]);
                         cell3.innerHTML = dados[i][1];
                         cell4.innerHTML = dados[i][2];
-                        cell5.innerHTML = dados[i][3];
-                        cell6.innerHTML = dados[i][4];
+                        cell5.innerHTML = cv(dados[i][3]);
+                        cell6.innerHTML = cv(dados[i][4]);
                         cell7.innerHTML = dados[i][5];
                         
                         if(dados[i][8] != ""){
@@ -448,9 +454,9 @@
                             var stat = "Agendado"
                         }
                         cell8.innerHTML = stat;
-
                     }
                     table.classList.remove("bloque");
+                    table.classList.add("tab");
 
                     /*
                     if(msn ==="ok"){
@@ -462,11 +468,17 @@
                         plan.classList.add("bloque")
                         info_p.textContent = msn
                     }
-                    */
-                    
-                })
-                    
+                    */                   
+                })           
         });
+
+        function cv(dat){
+
+            var d1 = dat.split("T")[0];
+            var format = `${d1.split("-")[2]}/${d1.split("-")[1]}/${d1.split("-")[0]}`;
+            return format;
+
+        }
 
     </script>
 </html>
