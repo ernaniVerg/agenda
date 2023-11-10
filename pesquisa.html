@@ -399,6 +399,9 @@
 
 
         tipo.addEventListener("change", () => {
+
+            table.classList.remove("tab");
+            table.classList.add("bloque");
             const tp = tipo.value
             if(tp === "2"){
 
@@ -417,6 +420,11 @@
         });    
         
         btn_p.addEventListener('click', function() {
+
+            for (var i = tabela.rows.length - 1; i > 0; i--) {
+                tabela.deleteRow(i);
+            }
+
             var opi = "3";
             const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?cong_p=${cong_p.value}&dep_p=${departamento_p.value}&opi=${opi}`
            
