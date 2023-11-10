@@ -195,14 +195,14 @@
         <div id="data_ini_d">
             <br>
             <label for="data_ini">Data Inicial:</label>
-            <input type="date" id="data_ini" name="data_p">
+            <input type="date" id="data_ini" name="data_ini">
             <br>
         </div>
 
         <div id="cong_p_d"  class="bloque">
             <br>
             <label for="cong_p">Congregação:</label>
-            <select id="cong_p" name="Cong_p">
+            <select id="cong_p" name="cong_p">
                 <option value=""></option>
                 <option value="Agudos Canaa">Agudos Canaa</option>
                 <option value= "Agudos Pampulha">Agudos Pampulha</option>
@@ -320,6 +320,10 @@
         const plan = document.getElementById('plan')
         const info_p = document.getElementById("info_p")
 
+        departamento_p.value = "";
+        cong_p.value = "";
+        dataIni.value ="";
+
         tipo.addEventListener("change", () => {
             const tp = tipo.value
             if(tp === "1"){
@@ -356,7 +360,8 @@
 
         btn_p.addEventListener('click', function() {
             var opi = "3";
-            if (tipo.value === "1"){
+            const tp = tipo.value;
+            if (tp === "1"){
                 const dataInP = new Date(dataIni.value);
             }else {
                 const dataInP = "";
@@ -366,7 +371,6 @@
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
                 .then(msn => {
-
                     console.log(msn);
                     if(msn ==="ok"){
                         plan.classList.remove("bloque")
