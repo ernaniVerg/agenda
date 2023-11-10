@@ -191,7 +191,7 @@
             <option value= "3">por departamento</option>
         </select>
 
-        <div id="cong_p_d"  class="bloque">
+        <div id="cong_p_d">
             <br>
             <label for="cong_p">Congregação:</label>
             <select id="cong_p" name="cong_p">
@@ -295,7 +295,7 @@
     </div>             
         <br>
     <div id="plan" class="bloque">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-YxinIws0UURECMLup4mO3KVPockwIQpxjBq1A7PBYvNJcRskV_6fhEdspX2EQ5twmiGJJIPrDoXQ/pubhtml?gid=1628948076&amp;single=true&amp;widget=true&amp;headers=false" width="800" height="500"></iframe>
+        <iframe id="iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT-YxinIws0UURECMLup4mO3KVPockwIQpxjBq1A7PBYvNJcRskV_6fhEdspX2EQ5twmiGJJIPrDoXQ/pubhtml?gid=1628948076&amp;single=true&amp;widget=true&amp;headers=false" width="800" height="500"></iframe>
     </div>
 </body>
 
@@ -309,6 +309,8 @@
         const btn_p = document.getElementById('btn_p');
         const plan = document.getElementById('plan');
         const info_p = document.getElementById("info_p");
+        var iframe = document.getElementById('iframe');
+
 
         tipo.addEventListener("change", () => {
             const tp = tipo.value
@@ -333,15 +335,18 @@
         btn_p.addEventListener('click', function() {
             var opi = "3";
             const urlP = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?cong_p=${cong_p.value}&dep_p=${departamento_p.value}&opi=${opi}`
+           
             info_p.textContent = "Aguarde..."
             fetch(urlP)
                 .then(response => response.json()) // Converte a resposta em JSON
                 .then(msn => {
                     console.log(msn);
                     if(msn ==="ok"){
+                        iframe.src = iframe.src;
                         plan.classList.remove("bloque")
-                        info_p.value = "";
+                        info_p.textContent = "";
                     }else{
+                        iframe.src = iframe.src;
                         plan.classList.add("bloque")
                         info_p.textContent = msn
                     }
