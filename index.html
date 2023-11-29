@@ -430,7 +430,7 @@
                 <br>
 
                 <label for="evento">Evento :</label>
-                <input type="text" name="Nome_do_evento" id="evento" pattern="^(?!.*(congresso|CONGRESSO|Congresso))(?=(?:\S+\s){1,}\S+$).*$" title="Utilize mais de uma Palavra, Não use 'congresso', ex Festividade dos Varões, Culto especial dos Jovens etc..." required>
+                <input type="text" name="Nome_do_evento" id="evento" pattern="^(?!.*(congresso|CONGRESSO|Congresso))(?=(?:\S+\s){1,}\S+$).*\s*$" title="Utilize mais de uma Palavra, Não use 'congresso', ex Festividade dos Varões, Culto especial dos Jovens etc..." required>
                 <br>
 
                 <label for="Departamento">Departamento: </label>
@@ -675,7 +675,7 @@
 
         const dataInicialInput = document.getElementById('data-inicial');
         const dataFinalInput = document.getElementById('data-final');
-const even = document.getElementById('evento');
+        const even = document.getElementById('evento');
         const resp = document.getElementById('responsavel');
 
         const dataInicialAg = document.getElementById('data-inicialAg');
@@ -713,7 +713,7 @@ const even = document.getElementById('evento');
                 data.classList.remove('quadro');
                 data.classList.add('bloqueado');
                 meuDiv.classList.add('bloqueado');
-dataInicialInput.value ="";
+                dataInicialInput.value ="";
                 dataFinalInput.value = "";
 
                 dataInicialInput.removeAttribute('required');
@@ -731,7 +731,7 @@ dataInicialInput.value ="";
                 data.classList.add('quadro');
                 dataAg.classList.remove('quadro');
                 dataAg.classList.add('bloqueado');
-congAg.value = "";
+                congAg.value = "";
                 dataInicialAg.value = "";
 
                 dataInicialInput.setAttribute('required',true);
