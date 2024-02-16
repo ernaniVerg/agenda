@@ -233,7 +233,7 @@
 
     <div class="quadro">
         <label>
-            <input type="checkbox" id="preag">
+            <input type="checkbox" id="preag" name="preag" value="1">
             Evento já pré-agendado.
         </label>
     </div>
@@ -733,6 +733,7 @@
                 dataAg.classList.add('bloqueado');
                 congAg.value = "";
                 dataInicialAg.value = "";
+                checpreag.value ="";
 
                 dataInicialInput.setAttribute('required',true);
                 dataFinalInput.setAttribute('required',true);
