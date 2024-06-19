@@ -426,7 +426,7 @@
                 <br>
 
                 <label for="evento">Evento :</label>
-                <input type="text" name="Nome_do_evento" id="evento" pattern="^(?!.*(congresso|CONGRESSO|Congresso))(?=(?:\S+\s){1,}\S+$).*\s*$" title="Utilize mais de uma Palavra, Não use 'congresso', ex Festividade dos Varões, Culto especial dos Jovens etc..." required>
+                <input type="text" name="Nome_do_evento" id="evento" pattern="^(?!.*\b(?:congresso|CONGRESSO|Congresso)\b)(?:\S+\s+){1,}\S+\s*$" title="Utilize mais de uma Palavra, Não use 'congresso', ex Festividade dos Varões, Culto especial dos Jovens etc..." required>
                 <br>
 
                 <label for="Departamento">Departamento: </label>
