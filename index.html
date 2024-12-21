@@ -577,7 +577,7 @@
         const even = document.getElementById('evento');
         const resp = document.getElementById('responsavel');
 
-        const dataInicialAg = document.getElementById('data-inicialAg');
+        //const dataInicialAg = document.getElementById('data-inicialAg');
 
         const btn = document.getElementById('btn');
         const btn2 = document.getElementById('btn2');
@@ -633,7 +633,7 @@
                 //dataAg.classList.remove('quadro');
                 //dataAg.classList.add('bloqueado');
                 //congAg.value = "";
-                dataInicialAg.value = "";
+                //dataInicialAg.value = "";
                 //checpreag.value ="0";
 
                 dataInicialInput.setAttribute('required',true);
@@ -669,7 +669,7 @@
 
             var opi = "0";
             infoAg.textContent = "Aguarde...";
-            const dataInAg = new Date(dataInicialAg.value);
+            //const dataInAg = new Date(dataInicialAg.value);
             const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg.value}&opi=${opi}`
 
             fetch(urlAg)
