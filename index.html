@@ -27,7 +27,7 @@
             font-size: 60px; /* Tamanho da fonte */
         }
         h2 {
-            color: #fcb900; /* Azul Marinho */
+            color: #453300; /* Azul Marinho */
             text-align: center; /* Centralize o texto horizontalmente */
             font-size: 50px; /* Tamanho da fonte */
         }
@@ -888,9 +888,9 @@
         });
 
         //Script para o chekbox de quadro preletor e cantor
-        const checkbox1 = document.getElementById('checkbox1');
 
-        checkbox1.addEventListener('change', () => {
+
+
 
             const dataInicio = new Date(dataInicialInput.value);
             const dataFim = new Date(dataFinalInput.value);
@@ -898,7 +898,6 @@
             var diferencaEmMilissegundos = dataFim - dataInicio;
             var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
 
-            if (checkbox1.checked) {
                 div1d.classList.remove('bloqueado');
                 div1d.classList.add('quadro');
                 
@@ -912,12 +911,7 @@
                     div3d.classList.remove('bloqueado');
                     div3d.classList.add('quadro');
                 }
-            } else {
-                div1d.classList.add('bloqueado');
-                div2d.classList.add('bloqueado');
-                div3d.classList.add('bloqueado');
-            }
-        });
+
 
         //Script para outro ministerio e cantor 1_Dia
         const checkbox2 = document.getElementById('checkbox2');
