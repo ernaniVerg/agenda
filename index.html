@@ -569,13 +569,9 @@
         const dataFinalInput = document.getElementById('data-final');
         const even = document.getElementById('evento');
         const resp = document.getElementById('responsavel');
-
-
         const btn = document.getElementById('btn');
         const btn2 = document.getElementById('btn2');
-
         const infoPara = document.getElementById('info');
-
         const data = document.getElementById('Data');
 
 
@@ -655,6 +651,21 @@
                         meuDiv.classList.add('quadro');
                         btn2.classList.remove('botao-block');
                         btn2.classList.add('botao-diferenciado');
+                        div1d.classList.remove('bloqueado');
+                        div1d.classList.add('quadro');
+                        btn2.classList.remove('botao-block');
+                        btn2.classList.add('botao-diferenciado');
+
+                        if (ms[5] == '2'){
+                            div2d.classList.remove('bloqueado');
+                            div2d.classList.add('quadro');
+                        }
+                        if (ms[5] == '3'){
+                            div2d.classList.remove('bloqueado');
+                            div2d.classList.add('quadro');
+                            div3d.classList.remove('bloqueado');
+                            div3d.classList.add('quadro');
+                        }
                     }else{ 
                         meuDiv.classList.add('bloqueado');
                         btn2.classList.add('botao-block');
