@@ -231,6 +231,8 @@
         <br>
     </div>
 
+
+
     <form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec" method="post">   
     
         <div id="Data" class="quadro">
@@ -579,12 +581,12 @@
 
         const btn = document.getElementById('btn');
         const btn2 = document.getElementById('btn2');
-        const btnAg = document.getElementById('btnAg');
+        //const btnAg = document.getElementById('btnAg');
 
         const infoPara = document.getElementById('info');
-        const infoAg = document.getElementById('infoAg');
+        //const infoAg = document.getElementById('infoAg');
 
-        const dataAg = document.getElementById('dataAg');
+        //const dataAg = document.getElementById('dataAg');
         const data = document.getElementById('Data');
 
 
@@ -593,26 +595,26 @@
         const div2d = document.getElementById('2_dia');
         const div3d = document.getElementById('3_dia');
 
-        const congAg = document.getElementById('congAg');
+        //const congAg = document.getElementById('congAg');
 
         const dataInicialMinima = new Date();
-        dataInicialMinima.setDate(dataInicialMinima.getDate() + 15);
+        dataInicialMinima.setDate(dataInicialMinima.getDate() + );
         const minDate = dataInicialMinima.toISOString().split('T')[0];
         dataInicialInput.min = minDate;
 
-        const checpreag = document.getElementById('preag');
+        //const checpreag = document.getElementById('preag');
 
-        checpreag.addEventListener('change', () => {
-            if (checpreag.checked) {
+        //checpreag.addEventListener('change', () => {
+            //if (checpreag.checked) {
                 
-                dataAg.classList.remove('bloqueado');
-                dataAg.classList.add('quadro');
+                //dataAg.classList.remove('bloqueado');
+                //dataAg.classList.add('quadro');
                 data.classList.remove('quadro');
                 data.classList.add('bloqueado');
                 meuDiv.classList.add('bloqueado');
                 dataInicialInput.value ="";
                 dataFinalInput.value = "";
-              checpreag.value ="1";
+              //checpreag.value ="1";
 
                 dataInicialInput.removeAttribute('required');
                 dataFinalInput.removeAttribute('required');
@@ -624,15 +626,15 @@
                 div2d.classList.add('bloqueado');
                 div3d.classList.add('bloqueado');
                 
-            }else{
+           // }else{
 
                 data.classList.remove('bloqueado');
                 data.classList.add('quadro');
-                dataAg.classList.remove('quadro');
-                dataAg.classList.add('bloqueado');
-                congAg.value = "";
+                //dataAg.classList.remove('quadro');
+                //dataAg.classList.add('bloqueado');
+                //congAg.value = "";
                 dataInicialAg.value = "";
-                checpreag.value ="0";
+                //checpreag.value ="0";
 
                 dataInicialInput.setAttribute('required',true);
                 dataFinalInput.setAttribute('required',true);
@@ -643,8 +645,8 @@
                 div2d.classList.add('bloqueado');
                 div3d.classList.add('bloqueado');
                 
-            }
-        });
+            //}
+        //});
 
         const nomeEveAg = document.getElementById('nomeEveAg');
         const departAg = document.getElementById('departAg');
@@ -653,7 +655,7 @@
         const line = document.getElementById('line');
 
         // Localização do pre agendamento
-        btnAg.addEventListener('click', function() {
+        //btnAg.addEventListener('click', function() {
 
             div1d.classList.add('bloqueado');
             div2d.classList.add('bloqueado');
@@ -713,7 +715,7 @@
                 .catch(error => {
                     console.error('Ocorreu um erro:', error);
                 });
-            });
+            //});
 
         dataInicialInput.addEventListener('input', () => {
 
