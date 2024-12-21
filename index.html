@@ -699,10 +699,10 @@
         const minDate = dataInicialMinima.toISOString().split('T')[0];
         dataInicialInput.min = minDate;
 
-        const checpreag = document.getElementById('preag');
+        //const checpreag = document.getElementById('preag');
 
-        checpreag.addEventListener('change', () => {
-            if (checpreag.checked) {
+       // checpreag.addEventListener('change', () => {
+          //  if (checpreag.checked) {
                 
                 dataAg.classList.remove('bloqueado');
                 dataAg.classList.add('quadro');
@@ -711,7 +711,7 @@
                 meuDiv.classList.add('bloqueado');
                 dataInicialInput.value ="";
                 dataFinalInput.value = "";
-                checpreag.value ="1";
+            //    checpreag.value ="1";
 
                 dataInicialInput.removeAttribute('required');
                 dataFinalInput.removeAttribute('required');
@@ -723,27 +723,27 @@
                 div2d.classList.add('bloqueado');
                 div3d.classList.add('bloqueado');
                 
-            }else{
+          //  }else{
 
-                data.classList.remove('bloqueado');
-                data.classList.add('quadro');
-                dataAg.classList.remove('quadro');
-                dataAg.classList.add('bloqueado');
-                congAg.value = "";
-                dataInicialAg.value = "";
-                checpreag.value ="0";
+               // data.classList.remove('bloqueado');
+               // data.classList.add('quadro');
+               // dataAg.classList.remove('quadro');
+               // dataAg.classList.add('bloqueado');
+               // congAg.value = "";
+               // dataInicialAg.value = "";
+              //  checpreag.value ="0";
 
-                dataInicialInput.setAttribute('required',true);
-                dataFinalInput.setAttribute('required',true);
-                even.setAttribute('required',true);
-                resp.setAttribute('required',true);
+               // dataInicialInput.setAttribute('required',true);
+               // dataFinalInput.setAttribute('required',true);
+               // even.setAttribute('required',true);
+               // resp.setAttribute('required',true);
 
-                div1d.classList.add('bloqueado');
-                div2d.classList.add('bloqueado');
-                div3d.classList.add('bloqueado');
+               // div1d.classList.add('bloqueado');
+               // div2d.classList.add('bloqueado');
+               // div3d.classList.add('bloqueado');
                 
-            }
-        });
+            //}
+        //});
 
         const nomeEveAg = document.getElementById('nomeEveAg');
         const departAg = document.getElementById('departAg');
