@@ -231,6 +231,106 @@
         <br>
     </div>
 
+
+   <div class="quadro">
+      <label>
+          <input type="checkbox" id="preag" name="preag" value="0">
+            Evento já pré-agendado.
+        </label>
+    </div>
+
+    <div id="dataAg" class="bloqueado">
+        <h2>Dados do Pré-Agendamento</h2>
+        <label for="data-inicialAg">Data Inicial:</label>
+        <input type="date" id="data-inicialAg" name="data_inicialAg">
+
+        <label for="igrejaAg">Congregação:</label>
+        <select id="congAg" name="CongregacaoAg">
+            <option value=""></option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value="Agudos Pampulha">Agudos Pampulha</option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value="Agudos Simões">Agudos Simões</option>
+            <option value="Altos da Cidade">Altos da Cidade</option>
+            <option value="Arealva">Arealva</option>
+            <option value="Areiópolis">Areiópolis</option>
+            <option value="Avaí">Avaí</option>
+            <option value="Avanhandava">Avanhandava</option>
+            <option value="Balbinos">Balbinos</option>
+            <option value="Barra Bonita">Barra Bonita</option>
+            <option value="Bauru I">Bauru I</option>
+            <option value="Boracéia">Boracéia</option>
+            <option value="Cafelandia">Cafelandia</option>
+            <option value="Domelia">Domelia</option>
+            <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
+            <option value="Parque Paulista">Parque Paulista</option>
+            <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
+            <option value="Gasparini">Gasparini</option>
+            <option value="Iacanga">Iacanga</option>
+            <option value="Iaras">Iaras</option>
+            <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
+            <option value="Itapuí">Itapuí</option>
+            <option value="Jaraguá">Jaraguá</option>
+            <option value="Jardim Andorfato">Jardim Andorfato</option>
+            <option value="Jardim Bela Vista">Jardim Bela Vista</option>
+            <option value="Jardim Carolina">Jardim Carolina</option>
+            <option value="Jardim Chapadão">Jardim Chapadão</option>
+            <option value="Jardim Flórida">Jardim Flórida</option>
+            <option value="Jardim Nicéia">Jardim Nicéia</option>
+            <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
+            <option value="Jardim Redentor">Jardim Redentor</option>
+            <option value="Jardim TV">Jardim TV</option>
+            <option value="Macatuba Centro">Macatuba Centro</option>
+            <option value="Nova Mineiros">Nova Mineiros</option>
+            <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
+            <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
+            <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
+            <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
+            <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
+            <option value="Parque Real">Parque Real</option>
+            <option value="Parque Roosevelt">Parque Roosevelt</option>
+            <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
+            <option value="Parque Viaduto">Parque Viaduto</option>
+            <option value="Pederneiras - VP">Pederneiras - VP</option>
+            <option value="Pederneiras CN">Pederneiras CN</option>
+            <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
+            <option value="Piratininga">Piratininga</option>
+            <option value="Potunduva - Jaú">Potunduva - Jaú</option>
+            <option value="Pousada I">Pousada I</option>
+            <option value="Pousada II">Pousada II</option>
+            <option value="Presidente Alves">Presidente Alves</option>
+            <option value="Promissão">Promissão</option>
+            <option value="Promissão Jardim America">Promissão Jardim America</option>
+            <option value="Reginopólis">Reginopólis</option>
+            <option value="Jardim Olímpico">Jardim Olímpico</option>
+            <option value="Santa Candida">Santa Candida</option>
+            <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
+            <option value="Santa Luzia">Santa Luzia</option>
+            <option value="Santa Terezinha">Santa Terezinha</option>
+            <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
+            <option value="São Manoel">São Manoel</option>
+            <option value="Sarutaiá">Sarutaiá</option>
+            <option value="Sede Catedral">Sede Catedral</option>
+            <option value="Tangarás">Tangarás</option>
+            <option value="Vila Dutra">Vila Dutra</option>
+            <option value="Vila Indepedendência">Vila Independência</option>
+            <option value="Vila Industrial">Vila Industrial</option>
+            <option value="Vila São Paulo">Vila São Paulo</option>
+        </select>
+            <br>
+            <br>
+            <p id="infoAg"></p>
+            <br>
+            <p id="nomeEveAg">Nome do Evento: </p>
+            <p id="departAg">Departamento: </p>
+            <p id="dataIAg">Dias de Evento: </p>
+            <p id="Rpre">Responsavel do Pré-Agendamento: </p>
+
+            <button id="btnAg" class="botao-diferenciado">Localizar na Agenda</button> 
+            <br>
+
+    </div>
+
     <form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec" method="post">   
     
         <div id="Data" class="quadro">
@@ -351,6 +451,13 @@
                 <input type="email" id="email" name="email">
                 <br>
                 <br>
+
+                <label>
+                    <input type="checkbox" id="checkbox1">
+                    Possuí Preletor Definido: 
+                </label>
+                <br>
+
             </div>
             
             <div id="1_dia" class="bloqueado">
@@ -593,7 +700,31 @@
         const minDate = dataInicialMinima.toISOString().split('T')[0];
         dataInicialInput.min = minDate;
 
+        const checpreag = document.getElementById('preag');
 
+        checpreag.addEventListener('change', () => {
+            if (checpreag.checked) {
+                
+                dataAg.classList.remove('bloqueado');
+                dataAg.classList.add('quadro');
+                data.classList.remove('quadro');
+                data.classList.add('bloqueado');
+                meuDiv.classList.add('bloqueado');
+                dataInicialInput.value ="";
+                dataFinalInput.value = "";
+              checpreag.value ="1";
+
+                dataInicialInput.removeAttribute('required');
+                dataFinalInput.removeAttribute('required');
+                even.removeAttribute('required');
+                even.value = "ok ok";
+                resp.removeAttribute('required');
+
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+                
+            }else{
 
                 data.classList.remove('bloqueado');
                 data.classList.add('quadro');
@@ -611,7 +742,9 @@
                 div1d.classList.add('bloqueado');
                 div2d.classList.add('bloqueado');
                 div3d.classList.add('bloqueado');
-
+                
+            }
+        });
 
         const nomeEveAg = document.getElementById('nomeEveAg');
         const departAg = document.getElementById('departAg');
@@ -619,6 +752,23 @@
         const Rpre = document.getElementById('Rpre');
         const line = document.getElementById('line');
 
+        // Localização do pre agendamento
+        btnAg.addEventListener('click', function() {
+
+            div1d.classList.add('bloqueado');
+            div2d.classList.add('bloqueado');
+            div3d.classList.add('bloqueado');
+
+            nomeEveAg.textContent = "Nome do Evento: ...";
+            departAg.textContent = "Departamento: ...";
+            dataIAg.textContent = "Dias de Evento: ...";
+            Rpre.textContent = "Responsavel do Pré-Agendamento: ...";
+            line.textContent ="";
+
+            var opi = "0";
+            infoAg.textContent = "Aguarde...";
+            const dataInAg = new Date(dataInicialAg.value);
+            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg.value}&opi=${opi}`
 
             fetch(urlAg)
                 .then(response => response.json()) // Converte a resposta em JSON
@@ -663,7 +813,8 @@
                 .catch(error => {
                     console.error('Ocorreu um erro:', error);
                 });
-                
+            });
+
         dataInicialInput.addEventListener('input', () => {
 
             const dataInicial = new Date(dataInicialInput.value);
