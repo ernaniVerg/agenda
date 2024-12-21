@@ -1,8 +1,9 @@
+
 <!DOCTYPE html lang="pt-br">
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Formulário de Eventos AD Bras Bauru - 2025</title>
+    <title>Formulário de Eventos AD Bras Bauru - 2024</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap">
     <style>
         body {
@@ -27,20 +28,20 @@
             font-size: 60px; /* Tamanho da fonte */
         }
         h2 {
-            color: #0011ae; /* Azul Marinho */
+            color: #170045; /* Azul Marinho */
             text-align: center; /* Centralize o texto horizontalmente */
             font-size: 50px; /* Tamanho da fonte */
         }
 
        .quadro {
-            border: 4px solid #515151; /* Espessura e cor da borda */
+            border: 4px solid #23055f; /* Espessura e cor da borda */
             padding: 40px; /* Espaçamento interno para criar margem em torno do conteúdo */
             margin: 40px; /* Espaçamento externo para separar o quadro de outros elementos */
             max-width: 90%;
             margin: 0 auto;
             padding: 40px;
             background-color: rgba(255, 255, 255,0.75);
-            box-shadow: 0 0 30px rgba(107, 173, 244, 0.4);
+            box-shadow: 0 0 30px rgba(108, 108, 108, 0.4);
             border-radius: 40px; /* Borda arredondada */
             font-size: 30px; /* Tamanho da fonte */
             align-items: center;
@@ -123,7 +124,7 @@
 
         select option {
             background-color: #fff; /* Cor de fundo das opções */
-            color: #213421; /* Cor do texto das opções */
+            color: #333; /* Cor do texto das opções */
         }
 
         select:focus {
@@ -215,7 +216,7 @@
     <header>
         <br>
         <br>
-        <h1>Formulário de Eventos 2025</h1>
+        <h1>Formulário de Eventos 2024</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Formulario de Eventos</a></li>
@@ -231,10 +232,9 @@
         <br>
     </div>
 
-
-   <div class="bloqueado">
-      <label>
-          <input type="checkbox" id="preag" name="preag" value="0">
+    <div class="quadro">
+        <label>
+            <input type="checkbox" id="preag" name="preag" value="0">
             Evento já pré-agendado.
         </label>
     </div>
@@ -453,7 +453,7 @@
                 <br>
 
                 <label>
-                    <input type="checkbox" id="checkbox1" checked >
+                    <input type="checkbox" id="checkbox1">
                     Possuí Preletor Definido: 
                 </label>
                 <br>
@@ -696,7 +696,7 @@
         const congAg = document.getElementById('congAg');
 
         const dataInicialMinima = new Date();
-        dataInicialMinima.setDate(dataInicialMinima.getDate() + 15);
+        dataInicialMinima.setDate(dataInicialMinima.getDate() + 30);
         const minDate = dataInicialMinima.toISOString().split('T')[0];
         dataInicialInput.min = minDate;
 
@@ -712,7 +712,7 @@
                 meuDiv.classList.add('bloqueado');
                 dataInicialInput.value ="";
                 dataFinalInput.value = "";
-              checpreag.value ="1";
+                checpreag.value ="1";
 
                 dataInicialInput.removeAttribute('required');
                 dataFinalInput.removeAttribute('required');
@@ -888,7 +888,9 @@
         });
 
         //Script para o chekbox de quadro preletor e cantor
+        const checkbox1 = document.getElementById('checkbox1');
 
+        checkbox1.addEventListener('change', () => {
 
             const dataInicio = new Date(dataInicialInput.value);
             const dataFim = new Date(dataFinalInput.value);
@@ -896,6 +898,7 @@
             var diferencaEmMilissegundos = dataFim - dataInicio;
             var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
 
+            if (checkbox1.checked) {
                 div1d.classList.remove('bloqueado');
                 div1d.classList.add('quadro');
                 
@@ -909,7 +912,12 @@
                     div3d.classList.remove('bloqueado');
                     div3d.classList.add('quadro');
                 }
-
+            } else {
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+            }
+        });
 
         //Script para outro ministerio e cantor 1_Dia
         const checkbox2 = document.getElementById('checkbox2');
