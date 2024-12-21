@@ -581,9 +581,12 @@
         const div3d = document.getElementById('3_dia');
 
         const dataInicialMinima = new Date();
-        dataInicialMinima.setDate(dataInicialMinima.getDate() + 30);
+        const dataInicialMax = new Date("2025-03-31");
+        dataInicialMinima.setDate(dataInicialMinima.getDate() + 15);
         const minDate = dataInicialMinima.toISOString().split('T')[0];
+        const maxDate = dataInicialMax.toISOString().split('T')[0];
         dataInicialInput.min = minDate;
+        dataInicialInput.max = maxDate;
 
         const Rpre = document.getElementById('Rpre');
         const line = document.getElementById('line');
