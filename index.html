@@ -643,7 +643,7 @@
             
             console.log(dataIn)
             console.log(dataFim)
-
+p
             fetch(url)
                 .then(response => response.json()) // Converte a resposta em JSON
                 .then(msn => {
@@ -671,7 +671,7 @@
         var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
 
                 
-        if (dif === 1){
+        if (dif >= 1 && dif <= 2){
                     div2d.classList.remove('bloqueado');
                     div2d.classList.add('quadro');
                 }
@@ -681,11 +681,6 @@
                     div3d.classList.remove('bloqueado');
                     div3d.classList.add('quadro');
                 }
-        else {
-                div1d.classList.add('bloqueado');
-                div2d.classList.add('bloqueado');
-                div3d.classList.add('bloqueado');
-            }
         });
 
         //Script para o chekbox de quadro preletor e cantor
