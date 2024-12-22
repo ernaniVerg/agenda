@@ -680,6 +680,32 @@
                 });
         });
 
+        const dataInicio = new Date(dataInicialInput.value);
+        const dataFim = new Date(dataFinalInput.value);
+
+        var diferencaEmMilissegundos = dataFim - dataInicio;
+        var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
+
+                
+        if (dif === 1){
+                    div2d.classList.remove('bloqueado');
+                    div2d.classList.add('quadro');
+                }
+        if (dif === 2){
+                    div2d.classList.remove('bloqueado');
+                    div2d.classList.add('quadro');
+                    div3d.classList.remove('bloqueado');
+                    div3d.classList.add('quadro');
+                }
+            } else {
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+            }
+        });
+
+
+
         //Script para o chekbox de quadro preletor e cantor
 
         //Script para outro ministerio e cantor 1_Dia
