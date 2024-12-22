@@ -659,23 +659,8 @@
                         div1d.classList.add('quadro');
                         btn2.classList.remove('botao-block');
                         btn2.classList.add('botao-diferenciado');
-
-                        if (informacao.split(':')[5] == '2'){
-                            div2d.classList.remove('bloqueado');
-                            div2d.classList.add('quadro');
-                        }
-                        if (informacao.split(':')[5] == '3'){
-                            div2d.classList.remove('bloqueado');
-                            div2d.classList.add('quadro');
-                            div3d.classList.remove('bloqueado');
-                            div3d.classList.add('quadro');
-                        }
-                    }else{ 
-                        meuDiv.classList.add('bloqueado');
-                        btn2.classList.add('botao-block');
-                    }
-                })
-                .catch(error => {
+                
+                    }}).catch(error => {
                     console.error('Ocorreu um erro:', error);
                 });
         });
