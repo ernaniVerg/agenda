@@ -210,7 +210,7 @@
             font-size: 70px;
         }
 
-
+       
     </style>
 </head>
 <body>
@@ -228,9 +228,108 @@
     <br>
     <br>
     <div id="data" class="quadro">
-        <h2>Calendário do Campo - Jan/Mar -2025</h2>
+        <h2>Calendário do Campo - Jan/Mar 2025</h2>
         <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FSao_Paulo&showPrint=0&src=MTU2ODNkMzQxNjcxNTk0MGRmN2NiY2VlNDljZDA0N2M4YjExZmE2MTQ1ZjM4YTk5M2Y3NzRiOTA4NDQ5YTVkNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NTE5OGFjNTY5N2VjOTQ2MDMyMThlZDMyYWFjMmM1NDEzNWViNDUxOGIyZjQ2MTNlZTU0MjE2OWY3ZDNkM2QwOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTc4NGVkM2I0NzI1ODExYmViZjg1ODkxMGY3NmMyNjQ0YzM2MDM5MmNiYTBhNzBhNzZhNTlmNTc3OTk3ZTRlMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YTc3ZDFkNzZkNDZhMmI3OWU3NGI4YjM5ZjcyZThkYmNiODllY2EzYzIxMmE2YzUzMWNkNGYxOTJkODViMDg3MUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=cHQtcHQuYnJhemlsaWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000&color=%237986CB&color=%2333B679&color=%23616161&color=%239cc9cc" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no" align="middle"></iframe>
         <br>
+    </div>
+
+    <div class="quadro">
+        <label>
+            <input type="checkbox" id="preag" name="preag" value="0">
+            Evento já pré-agendado.
+        </label>
+    </div>
+
+    <div id="dataAg" class="bloqueado">
+        <h2>Dados do Pré-Agendamento</h2>
+        <label for="data-inicialAg">Data Inicial:</label>
+        <input type="date" id="data-inicialAg" name="data_inicialAg">
+
+        <label for="igrejaAg">Congregação:</label>
+        <select id="congAg" name="CongregacaoAg">
+            <option value=""></option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value="Agudos Pampulha">Agudos Pampulha</option>
+            <option value="Agudos Canaa">Agudos Canaa</option>
+            <option value="Agudos Simões">Agudos Simões</option>
+            <option value="Altos da Cidade">Altos da Cidade</option>
+            <option value="Arealva">Arealva</option>
+            <option value="Areiópolis">Areiópolis</option>
+            <option value="Avaí">Avaí</option>
+            <option value="Avanhandava">Avanhandava</option>
+            <option value="Balbinos">Balbinos</option>
+            <option value="Barra Bonita">Barra Bonita</option>
+            <option value="Bauru I">Bauru I</option>
+            <option value="Boracéia">Boracéia</option>
+            <option value="Cafelandia">Cafelandia</option>
+            <option value="Domelia">Domelia</option>
+            <option value="Espirito S. do Turvo">Espirito S. do Turvo</option>
+            <option value="Parque Paulista">Parque Paulista</option>
+            <option value="Fortunato Rocha Lima">Fortunato Rocha Lima</option>
+            <option value="Gasparini">Gasparini</option>
+            <option value="Iacanga">Iacanga</option>
+            <option value="Iaras">Iaras</option>
+            <option value="Igaraçu do Tiete">Igaraçu do Tiete</option>
+            <option value="Itapuí">Itapuí</option>
+            <option value="Jaraguá">Jaraguá</option>
+            <option value="Jardim Andorfato">Jardim Andorfato</option>
+            <option value="Jardim Bela Vista">Jardim Bela Vista</option>
+            <option value="Jardim Carolina">Jardim Carolina</option>
+            <option value="Jardim Chapadão">Jardim Chapadão</option>
+            <option value="Jardim Flórida">Jardim Flórida</option>
+            <option value="Jardim Nicéia">Jardim Nicéia</option>
+            <option value="Jardim Ouro Verde">Jardim Ouro Verde</option>
+            <option value="Jardim Redentor">Jardim Redentor</option>
+            <option value="Jardim TV">Jardim TV</option>
+            <option value="Macatuba Centro">Macatuba Centro</option>
+            <option value="Nova Mineiros">Nova Mineiros</option>
+            <option value="Núcleo Bauru 2000">Núcleo Bauru 2000</option>
+            <option value="Nucléo Bauru XVI">Nucléo Bauru XVI</option>
+            <option value="Núcleo Mary Dota">Núcleo Mary Dota</option>
+            <option value="Núcleo Otávio Rasi">Núcleo Otávio Rasi</option>
+            <option value="Núcleo Presidente Geisel">Núcleo Presidente Geisel</option>
+            <option value="Parque Real">Parque Real</option>
+            <option value="Parque Roosevelt">Parque Roosevelt</option>
+            <option value="Parque Santa Edwirges">Parque Santa Edwirges</option>
+            <option value="Parque Viaduto">Parque Viaduto</option>
+            <option value="Pederneiras - VP">Pederneiras - VP</option>
+            <option value="Pederneiras CN">Pederneiras CN</option>
+            <option value="Pederneiras-Marajoara">Pederneiras-Marajoara</option>
+            <option value="Piratininga">Piratininga</option>
+            <option value="Potunduva - Jaú">Potunduva - Jaú</option>
+            <option value="Pousada I">Pousada I</option>
+            <option value="Pousada II">Pousada II</option>
+            <option value="Presidente Alves">Presidente Alves</option>
+            <option value="Promissão">Promissão</option>
+            <option value="Promissão Jardim America">Promissão Jardim America</option>
+            <option value="Reginopólis">Reginopólis</option>
+            <option value="Jardim Olímpico">Jardim Olímpico</option>
+            <option value="Santa Candida">Santa Candida</option>
+            <option value="Santa Cruz do R. Pardo">Santa Cruz do R. Pardo</option>
+            <option value="Santa Luzia">Santa Luzia</option>
+            <option value="Santa Terezinha">Santa Terezinha</option>
+            <option value="São Luiz do Guaricanga">São Luiz do Guaricanga</option>
+            <option value="São Manoel">São Manoel</option>
+            <option value="Sarutaiá">Sarutaiá</option>
+            <option value="Sede Catedral">Sede Catedral</option>
+            <option value="Tangarás">Tangarás</option>
+            <option value="Vila Dutra">Vila Dutra</option>
+            <option value="Vila Indepedendência">Vila Independência</option>
+            <option value="Vila Industrial">Vila Industrial</option>
+            <option value="Vila São Paulo">Vila São Paulo</option>
+        </select>
+            <br>
+            <br>
+            <p id="infoAg"></p>
+            <br>
+            <p id="nomeEveAg">Nome do Evento: </p>
+            <p id="departAg">Departamento: </p>
+            <p id="dataIAg">Dias de Evento: </p>
+            <p id="Rpre">Responsavel do Pré-Agendamento: </p>
+
+            <button id="btnAg" class="botao-diferenciado">Localizar na Agenda</button> 
+            <br>
+
     </div>
 
     <form id="meuFormulario" action="https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec" method="post">   
@@ -243,7 +342,7 @@
             <label for="data-final">Data Final:</label>
             <input type="date" id="data-final" name="data_final" required>
             <br>
-            <p id="info">Agendamento disponivel apenas para o trimestre</p>
+            <p id="info"></p>
             <br>
             <button id="btn" class="botao-diferenciado">Verificar disponibilidade</button> 
             <br>
@@ -352,6 +451,12 @@
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email">
                 <br>
+                <br>
+
+                <label>
+                    <input type="checkbox" id="checkbox1">
+                    Possuí Preletor Definido: 
+                </label>
                 <br>
 
             </div>
@@ -570,9 +675,17 @@
         const dataFinalInput = document.getElementById('data-final');
         const even = document.getElementById('evento');
         const resp = document.getElementById('responsavel');
+
+        const dataInicialAg = document.getElementById('data-inicialAg');
+
         const btn = document.getElementById('btn');
         const btn2 = document.getElementById('btn2');
+        const btnAg = document.getElementById('btnAg');
+
         const infoPara = document.getElementById('info');
+        const infoAg = document.getElementById('infoAg');
+
+        const dataAg = document.getElementById('dataAg');
         const data = document.getElementById('Data');
 
 
@@ -580,6 +693,8 @@
         const div1d = document.getElementById('1_dia');
         const div2d = document.getElementById('2_dia');
         const div3d = document.getElementById('3_dia');
+
+        const congAg = document.getElementById('congAg');
 
         const dataInicialMinima = new Date();
         const dataInicialMax = new Date("2025-03-31");
@@ -589,9 +704,120 @@
         dataInicialInput.min = minDate;
         dataInicialInput.max = maxDate;
 
+        const checpreag = document.getElementById('preag');
+
+        checpreag.addEventListener('change', () => {
+            if (checpreag.checked) {
+                
+                dataAg.classList.remove('bloqueado');
+                dataAg.classList.add('quadro');
+                data.classList.remove('quadro');
+                data.classList.add('bloqueado');
+                meuDiv.classList.add('bloqueado');
+                dataInicialInput.value ="";
+                dataFinalInput.value = "";
+                checpreag.value ="1";
+
+                dataInicialInput.removeAttribute('required');
+                dataFinalInput.removeAttribute('required');
+                even.removeAttribute('required');
+                even.value = "_";
+                resp.removeAttribute('required');
+
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+                
+            }else{
+
+                data.classList.remove('bloqueado');
+                data.classList.add('quadro');
+                dataAg.classList.remove('quadro');
+                dataAg.classList.add('bloqueado');
+                congAg.value = "";
+                dataInicialAg.value = "";
+                checpreag.value ="0";
+
+                dataInicialInput.setAttribute('required',true);
+                dataFinalInput.setAttribute('required',true);
+                even.setAttribute('required',true);
+                resp.setAttribute('required',true);
+
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+                
+            }
+        });
+
+        const nomeEveAg = document.getElementById('nomeEveAg');
+        const departAg = document.getElementById('departAg');
+        const dataIAg = document.getElementById('dataIAg');
         const Rpre = document.getElementById('Rpre');
         const line = document.getElementById('line');
 
+        // Localização do pre agendamento
+        btnAg.addEventListener('click', function() {
+
+            div1d.classList.add('bloqueado');
+            div2d.classList.add('bloqueado');
+            div3d.classList.add('bloqueado');
+
+            nomeEveAg.textContent = "Nome do Evento: ...";
+            departAg.textContent = "Departamento: ...";
+            dataIAg.textContent = "Dias de Evento: ...";
+            Rpre.textContent = "Responsavel do Pré-Agendamento: ...";
+            line.textContent ="";
+
+            var opi = "0";
+            infoAg.textContent = "Aguarde...";
+            const dataInAg = new Date(dataInicialAg.value);
+            const urlAg = `https://script.google.com/macros/s/AKfycbxDFOHOIh_-8p_LGym7mLf3FJDh2VnAdwJ3Gs0GzX3uKMFLU8l7FxwFFr_bQkQfBF5JNg/exec?dataAg=${dataInAg}&congAg=${congAg.value}&opi=${opi}`
+
+            fetch(urlAg)
+                .then(response => response.json()) // Converte a resposta em JSON
+                .then(msn => {
+
+                    console.log(msn);
+                    const informacaoAg = msn;
+                    var ms = informacaoAg.split(':');
+                    infoAg.textContent = ms[1];
+
+                    if(ms[0] == '0'){
+
+                        nomeEveAg.textContent = "Nome do Evento:    "+ms[3];
+                        departAg.textContent = "Departamento:    "+ms[4];
+                        dataIAg.textContent = "Dias de Evento:    "+ms[5];
+                        Rpre.textContent = "Responsavel do Pré-Agendamento:    "+ms[6];
+                        line.value = ms[2];
+
+                        div1d.classList.remove('bloqueado');
+                        div1d.classList.add('quadro');
+                        btn2.classList.remove('botao-block');
+                        btn2.classList.add('botao-diferenciado');
+
+                        if (ms[5] == '2'){
+                            div2d.classList.remove('bloqueado');
+                            div2d.classList.add('quadro');
+                        }
+                        if (ms[5] == '3'){
+                            div2d.classList.remove('bloqueado');
+                            div2d.classList.add('quadro');
+                            div3d.classList.remove('bloqueado');
+                            div3d.classList.add('quadro');
+                        }
+                    } else {
+                        div1d.classList.add('bloqueado');
+                        div2d.classList.add('bloqueado');
+                        div3d.classList.add('bloqueado');
+                        btn2.classList.add('botao-block');
+                    }
+
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
+                });
+            });
 
         dataInicialInput.addEventListener('input', () => {
 
@@ -655,35 +881,47 @@
                         meuDiv.classList.add('quadro');
                         btn2.classList.remove('botao-block');
                         btn2.classList.add('botao-diferenciado');
-                        div1d.classList.remove('bloqueado');
-                        div1d.classList.add('quadro');
-                        btn2.classList.remove('botao-block');
-                        btn2.classList.add('botao-diferenciado');
-                
-                    }}).catch(error => {
+                    }else{ 
+                        meuDiv.classList.add('bloqueado');
+                        btn2.classList.add('botao-block');
+                    }
+                })
+                .catch(error => {
                     console.error('Ocorreu um erro:', error);
                 });
+        });
 
-        const dataInicio = new Date(dataInicialInput.value);
-        const dataFin = new Date(dataFinalInput.value);
+        //Script para o chekbox de quadro preletor e cantor
+        const checkbox1 = document.getElementById('checkbox1');
 
-        var diferencaEmMilissegundos = dataFin - dataInicio;
-        var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
+        checkbox1.addEventListener('change', () => {
 
+            const dataInicio = new Date(dataInicialInput.value);
+            const dataFim = new Date(dataFinalInput.value);
+
+            var diferencaEmMilissegundos = dataFim - dataInicio;
+            var dif = Math.floor(diferencaEmMilissegundos / (1000 * 60 * 60 * 24));
+
+            if (checkbox1.checked) {
+                div1d.classList.remove('bloqueado');
+                div1d.classList.add('quadro');
                 
-        if (dif >= 1 && dif < 2){
+                if (dif === 1){
                     div2d.classList.remove('bloqueado');
                     div2d.classList.add('quadro');
                 }
-        if (dif === 2){
+                if (dif === 2){
                     div2d.classList.remove('bloqueado');
                     div2d.classList.add('quadro');
                     div3d.classList.remove('bloqueado');
                     div3d.classList.add('quadro');
                 }
+            } else {
+                div1d.classList.add('bloqueado');
+                div2d.classList.add('bloqueado');
+                div3d.classList.add('bloqueado');
+            }
         });
-
-        //Script para o chekbox de quadro preletor e cantor
 
         //Script para outro ministerio e cantor 1_Dia
         const checkbox2 = document.getElementById('checkbox2');
